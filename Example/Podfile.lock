@@ -1,0 +1,16 @@
+PODS:
+  - PoporVideoTool (0.1.0)
+
+DEPENDENCIES:
+  - PoporVideoTool (from `../`)
+
+EXTERNAL SOURCES:
+  PoporVideoTool:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PoporVideoTool: 746199248e6278b0e55e76821fb46b110507e6cb
+
+PODFILE CHECKSUM: 4111a0db7b9fa3cddc429e4b719bd0147db21634
+
+COCOAPODS: 1.10.1
