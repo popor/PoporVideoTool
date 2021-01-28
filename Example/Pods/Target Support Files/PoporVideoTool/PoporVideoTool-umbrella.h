@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "PoporVideoTool.h"
 
 FOUNDATION_EXPORT double PoporVideoToolVersionNumber;
 FOUNDATION_EXPORT const unsigned char PoporVideoToolVersionString[];

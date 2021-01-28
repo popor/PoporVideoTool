@@ -1,16 +1,183 @@
 PODS:
+  - KVOController (1.2.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - PoporAVPlayer (1.02):
+    - KVOController
+    - Masonry
+    - PoporFoundation/NSAssistant
+    - PoporFoundation/Prefix
+    - PoporOrientation
+    - PoporUI/IToast
+    - PoporUI/UIView
+    - ReactiveObjC
+  - PoporFoundation (1.24):
+    - PoporFoundation/KVO (= 1.24)
+    - PoporFoundation/NSArray (= 1.24)
+    - PoporFoundation/NSAssistant (= 1.24)
+    - PoporFoundation/NSData (= 1.24)
+    - PoporFoundation/NSDate (= 1.24)
+    - PoporFoundation/NSDecimalNumber (= 1.24)
+    - PoporFoundation/NSDictionary (= 1.24)
+    - PoporFoundation/NSFileManager (= 1.24)
+    - PoporFoundation/NSObject (= 1.24)
+    - PoporFoundation/NSString (= 1.24)
+    - PoporFoundation/NSTimer (= 1.24)
+    - PoporFoundation/NSURL (= 1.24)
+    - PoporFoundation/Os (= 1.24)
+    - PoporFoundation/PFeedbackGenerator (= 1.24)
+    - PoporFoundation/Prefix (= 1.24)
+  - PoporFoundation/KVO (1.24)
+  - PoporFoundation/NSArray (1.24):
+    - PoporFoundation/NSObject
+    - PoporFoundation/Prefix
+  - PoporFoundation/NSAssistant (1.24):
+    - PoporFoundation/Os
+    - PoporFoundation/Prefix
+  - PoporFoundation/NSData (1.24)
+  - PoporFoundation/NSDate (1.24):
+    - PoporFoundation/NSString
+  - PoporFoundation/NSDecimalNumber (1.24):
+    - PoporFoundation/NSObject
+  - PoporFoundation/NSDictionary (1.24):
+    - PoporFoundation/NSObject
+    - PoporFoundation/Prefix
+  - PoporFoundation/NSFileManager (1.24)
+  - PoporFoundation/NSObject (1.24)
+  - PoporFoundation/NSString (1.24):
+    - PoporFoundation/NSObject
+    - PoporFoundation/Os
+    - PoporFoundation/Prefix
+  - PoporFoundation/NSTimer (1.24)
+  - PoporFoundation/NSURL (1.24):
+    - PoporFoundation/NSObject
+    - PoporFoundation/NSString
+  - PoporFoundation/Os (1.24)
+  - PoporFoundation/PFeedbackGenerator (1.24)
+  - PoporFoundation/Prefix (1.24):
+    - PoporFoundation/Os
+  - PoporImageBrower (1.01):
+    - MBProgressHUD
+    - SDWebImage
+  - PoporMedia (1.04):
+    - PoporMedia/PoporMedia (= 1.04)
+  - PoporMedia/PoporMedia (1.04):
+    - Masonry
+    - PoporFoundation/NSFileManager
+    - PoporFoundation/Prefix
+    - PoporImageBrower
+    - PoporUI/IToast
+    - PoporUI/UIDevice
+    - PoporUI/UIImage
+    - PoporUI/UIView
+    - ReactiveObjC
+    - SKFCamera
+    - TZImagePickerController
+  - PoporOrientation (1.01):
+    - PoporFoundation/NSObject
+  - PoporUI (1.25):
+    - PoporUI/AnimationShake (= 1.25)
+    - PoporUI/IToast (= 1.25)
+    - PoporUI/ProgressView (= 1.25)
+    - PoporUI/Response (= 1.25)
+    - PoporUI/UIAlertController (= 1.25)
+    - PoporUI/UIButton (= 1.25)
+    - PoporUI/UIDevice (= 1.25)
+    - PoporUI/UIImage (= 1.25)
+    - PoporUI/UILabel (= 1.25)
+    - PoporUI/UINavigationController (= 1.25)
+    - PoporUI/UIScrollView (= 1.25)
+    - PoporUI/UITableView (= 1.25)
+    - PoporUI/UITextField (= 1.25)
+    - PoporUI/UITextView (= 1.25)
+    - PoporUI/UIView (= 1.25)
+    - PoporUI/UIViewController (= 1.25)
+  - PoporUI/AnimationShake (1.25):
+    - PoporFoundation/PFeedbackGenerator
+  - PoporUI/IToast (1.25):
+    - PoporFoundation/NSString
+  - PoporUI/ProgressView (1.25)
+  - PoporUI/Response (1.25)
+  - PoporUI/UIAlertController (1.25)
+  - PoporUI/UIButton (1.25):
+    - PoporFoundation/NSObject
+    - PoporFoundation/NSString
+    - PoporFoundation/Prefix
+    - PoporUI/UIImage
+    - PoporUI/UIView
+  - PoporUI/UIDevice (1.25):
+    - PoporFoundation/NSString
+    - PoporUI/IToast
+  - PoporUI/UIImage (1.25)
+  - PoporUI/UILabel (1.25):
+    - PoporFoundation/NSObject
+    - PoporFoundation/NSString
+    - PoporUI/UIView
+  - PoporUI/UINavigationController (1.25)
+  - PoporUI/UIScrollView (1.25):
+    - PoporFoundation/NSObject
+  - PoporUI/UITableView (1.25)
+  - PoporUI/UITextField (1.25):
+    - PoporFoundation/NSObject
+    - PoporFoundation/NSString
+  - PoporUI/UITextView (1.25)
+  - PoporUI/UIView (1.25)
+  - PoporUI/UIViewController (1.25):
+    - PoporFoundation/NSObject
+    - PoporFoundation/NSString
+    - PoporFoundation/Prefix
+    - PoporUI/UIImage
   - PoporVideoTool (0.1.0)
+  - ReactiveObjC (3.1.1)
+  - SDWebImage (5.10.3):
+    - SDWebImage/Core (= 5.10.3)
+  - SDWebImage/Core (5.10.3)
+  - SKFCamera (1.3.2)
+  - TZImagePickerController (3.5.8)
 
 DEPENDENCIES:
+  - PoporAVPlayer
+  - PoporFoundation
+  - PoporMedia
+  - PoporUI
   - PoporVideoTool (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - KVOController
+    - Masonry
+    - MBProgressHUD
+    - PoporAVPlayer
+    - PoporFoundation
+    - PoporImageBrower
+    - PoporMedia
+    - PoporOrientation
+    - PoporUI
+    - ReactiveObjC
+    - SDWebImage
+    - SKFCamera
+    - TZImagePickerController
 
 EXTERNAL SOURCES:
   PoporVideoTool:
     :path: "../"
 
 SPEC CHECKSUMS:
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  PoporAVPlayer: 210b88d0d97e82a047f0ef0fcbe30ae2a9553095
+  PoporFoundation: 0861e1064f0afb658c1254537e0447123f135ac3
+  PoporImageBrower: 7f216f80f5d97e95dd7eba472c56331b79c494f7
+  PoporMedia: dc9040b82a3a203ad98e0f844c76f64ac117ac4f
+  PoporOrientation: fc9689a00117c6f084b7951664f5e4a94817a3e5
+  PoporUI: cdbf0e5f0123099eec0966aa9a052fa41a319881
   PoporVideoTool: 746199248e6278b0e55e76821fb46b110507e6cb
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: e378178472b735e84b007bfb55514c97948a0598
+  SKFCamera: d63fa8ca23eb5ec51ade911fcbe736ffc5b37b4d
+  TZImagePickerController: 7fd9702897ef8c0b7c951e5463f4bcf398296f9e
 
-PODFILE CHECKSUM: 4111a0db7b9fa3cddc429e4b719bd0147db21634
+PODFILE CHECKSUM: b0dd89f8a0f7b9c526303fa29b0d3d90c00ff000
 
 COCOAPODS: 1.10.1
