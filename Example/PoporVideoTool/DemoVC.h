@@ -1,5 +1,5 @@
 //
-//  DEMOAppDelegate.h
+//  DEMOViewController.h
 //  PoporVideoTool
 //
 //  Created by popor on 01/28/2021.
@@ -8,8 +8,6 @@
 
 @import UIKit;
 
-@interface DEMOAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface DemoVC : UIViewController
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright (c) 2021 popor. All rights reserved.
 //
 
-#import "DEMOAppDelegate.h"
+#import "DemoAppDelegate.h"
 
-@implementation DEMOAppDelegate
+@implementation DemoAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

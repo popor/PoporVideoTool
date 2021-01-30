@@ -6,7 +6,7 @@
 //  Copyright (c) 2021 popor. All rights reserved.
 //
 
-#import "DEMOViewController.h"
+#import "DemoVC.h"
 
 #import <PoporUI/PoporUI.h>
 #import <PoporFoundation/PoporFoundation.h>
@@ -18,7 +18,7 @@
 #import "PoporVideoTool.h"
 
 
-@interface DEMOViewController ()
+@interface DemoVC ()
 
 @property (nonatomic, strong) UIButton *albumBtn;
 @property (nonatomic, strong) UIButton *playBtn;
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation DEMOViewController
+@implementation DemoVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
