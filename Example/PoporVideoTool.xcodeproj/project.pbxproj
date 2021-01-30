@@ -18,11 +18,15 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		C3EDE9E725C5103500FAC920 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDE9E625C5103500FAC920 /* AppDelegate.m */; };
-		C3EDE9EA25C5103500FAC920 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDE9E925C5103500FAC920 /* ViewController.m */; };
 		C3EDE9EC25C5103700FAC920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3EDE9EB25C5103700FAC920 /* Assets.xcassets */; };
 		C3EDE9EF25C5103700FAC920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3EDE9ED25C5103700FAC920 /* Main.storyboard */; };
 		C3EDE9F225C5103700FAC920 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDE9F125C5103700FAC920 /* main.m */; };
 		C3EDEB2A25C52D4C00FAC920 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EDEB2925C52D4C00FAC920 /* Cocoa.framework */; };
+		C3EDEBB825C5435D00FAC920 /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDEBB125C5435C00FAC920 /* RootVC.m */; };
+		C3EDEBB925C5435D00FAC920 /* RootVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDEBB325C5435D00FAC920 /* RootVCInteractor.m */; };
+		C3EDEBBA25C5435D00FAC920 /* RootVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDEBB625C5435D00FAC920 /* RootVCPresenter.m */; };
+		C3EDEBDC25C54FAC00FAC920 /* VideoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDEBDB25C54FAC00FAC920 /* VideoEntity.m */; };
+		C3EDEBF125C5563D00FAC920 /* EditableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDEBF025C5563D00FAC920 /* EditableTextField.m */; };
 		D0038198248A16C8ABB3D492 /* Pods_PoporVideoTool_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D844ACF882DB48A8681811E5 /* Pods_PoporVideoTool_Example.framework */; };
 		D6CF77C2904BAE62A011A153 /* Pods_PvtMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0F090451604DA0A0687EE8 /* Pods_PvtMac.framework */; };
 /* End PBXBuildFile section */
@@ -54,8 +58,6 @@
 		C3EDE9E325C5103500FAC920 /* PvtMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PvtMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EDE9E525C5103500FAC920 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C3EDE9E625C5103500FAC920 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C3EDE9E825C5103500FAC920 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C3EDE9E925C5103500FAC920 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C3EDE9EB25C5103700FAC920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3EDE9EE25C5103700FAC920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3EDE9F025C5103700FAC920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +68,17 @@
 		C3EDEA0725C5103700FAC920 /* PvtMacUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PvtMacUITests.m; sourceTree = "<group>"; };
 		C3EDEA0925C5103700FAC920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3EDEB2925C52D4C00FAC920 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		C3EDEBAF25C5435C00FAC920 /* RootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVC.h; sourceTree = "<group>"; };
+		C3EDEBB025C5435C00FAC920 /* RootVCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVCProtocol.h; sourceTree = "<group>"; };
+		C3EDEBB125C5435C00FAC920 /* RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootVC.m; sourceTree = "<group>"; };
+		C3EDEBB325C5435D00FAC920 /* RootVCInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootVCInteractor.m; sourceTree = "<group>"; };
+		C3EDEBB425C5435D00FAC920 /* RootVCInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVCInteractor.h; sourceTree = "<group>"; };
+		C3EDEBB625C5435D00FAC920 /* RootVCPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootVCPresenter.m; sourceTree = "<group>"; };
+		C3EDEBB725C5435D00FAC920 /* RootVCPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVCPresenter.h; sourceTree = "<group>"; };
+		C3EDEBDA25C54FAC00FAC920 /* VideoEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoEntity.h; sourceTree = "<group>"; };
+		C3EDEBDB25C54FAC00FAC920 /* VideoEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoEntity.m; sourceTree = "<group>"; };
+		C3EDEBEF25C5563D00FAC920 /* EditableTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTextField.h; sourceTree = "<group>"; };
+		C3EDEBF025C5563D00FAC920 /* EditableTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTextField.m; sourceTree = "<group>"; };
 		C45BC77D7EC6348A1181570E /* Pods_PoporVideoTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporVideoTool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC97124649555F86E472ABA9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D844ACF882DB48A8681811E5 /* Pods_PoporVideoTool_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporVideoTool_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,8 +199,7 @@
 				C3EDEA1725C5107C00FAC920 /* other */,
 				C3EDE9E525C5103500FAC920 /* AppDelegate.h */,
 				C3EDE9E625C5103500FAC920 /* AppDelegate.m */,
-				C3EDE9E825C5103500FAC920 /* ViewController.h */,
-				C3EDE9E925C5103500FAC920 /* ViewController.m */,
+				C3EDEBA325C5433400FAC920 /* RootVC */,
 			);
 			path = PvtMac;
 			sourceTree = "<group>";
@@ -220,6 +232,64 @@
 				C3EDE9F325C5103700FAC920 /* PvtMac.entitlements */,
 			);
 			name = other;
+			sourceTree = "<group>";
+		};
+		C3EDEBA325C5433400FAC920 /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDEBEE25C5562F00FAC920 /* cell */,
+				C3EDEBD925C54F9800FAC920 /* entity */,
+				C3EDEBAE25C5435C00FAC920 /* View */,
+				C3EDEBB525C5435D00FAC920 /* Presenter */,
+				C3EDEBB225C5435D00FAC920 /* Interactor */,
+			);
+			path = RootVC;
+			sourceTree = "<group>";
+		};
+		C3EDEBAE25C5435C00FAC920 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDEBAF25C5435C00FAC920 /* RootVC.h */,
+				C3EDEBB125C5435C00FAC920 /* RootVC.m */,
+				C3EDEBB025C5435C00FAC920 /* RootVCProtocol.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C3EDEBB225C5435D00FAC920 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDEBB425C5435D00FAC920 /* RootVCInteractor.h */,
+				C3EDEBB325C5435D00FAC920 /* RootVCInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C3EDEBB525C5435D00FAC920 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDEBB725C5435D00FAC920 /* RootVCPresenter.h */,
+				C3EDEBB625C5435D00FAC920 /* RootVCPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C3EDEBD925C54F9800FAC920 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDEBDA25C54FAC00FAC920 /* VideoEntity.h */,
+				C3EDEBDB25C54FAC00FAC920 /* VideoEntity.m */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		C3EDEBEE25C5562F00FAC920 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDEBEF25C5563D00FAC920 /* EditableTextField.h */,
+				C3EDEBF025C5563D00FAC920 /* EditableTextField.m */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		EC77164716E7E53F1710B87C /* Pods */ = {
@@ -369,15 +439,15 @@
 				"${PODS_ROOT}/Target Support Files/Pods-PoporVideoTool_Example/Pods-PoporVideoTool_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry-iOS/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporAVPlayer/PoporAVPlayer.framework",
-				"${BUILT_PRODUCTS_DIR}/PoporFoundation/PoporFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/PoporFoundation-iOS/PoporFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporImageBrower/PoporImageBrower.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporMedia/PoporMedia.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporOrientation/PoporOrientation.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporUI/PoporUI.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporVideoTool-iOS/PoporVideoTool.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC-iOS/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SKFCamera/SKFCamera.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
@@ -433,11 +503,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PvtMac/Pods-PvtMac-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry-macOS/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/PoporFoundation-macOS/PoporFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporVideoTool-macOS/PoporVideoTool.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC-macOS/ReactiveObjC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PoporFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PoporVideoTool.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,9 +537,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3EDE9EA25C5103500FAC920 /* ViewController.m in Sources */,
+				C3EDEBB825C5435D00FAC920 /* RootVC.m in Sources */,
 				C3EDE9F225C5103700FAC920 /* main.m in Sources */,
+				C3EDEBDC25C54FAC00FAC920 /* VideoEntity.m in Sources */,
 				C3EDE9E725C5103500FAC920 /* AppDelegate.m in Sources */,
+				C3EDEBB925C5435D00FAC920 /* RootVCInteractor.m in Sources */,
+				C3EDEBBA25C5435D00FAC920 /* RootVCPresenter.m in Sources */,
+				C3EDEBF125C5563D00FAC920 /* EditableTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -218,6 +218,12 @@ typedef void(^PoporVideoBlock_PFloat) (CGFloat progress);
 + (CGSize)sizeFrom:(CGSize)originSize toSize:(CGSize)targetSize;
 + (CGSize)sizeVideoUrl:(NSURL *)videoUrl;
 
++ (CGFloat)durationVideoUrl:(NSURL *)videoUrl;
+
++ (NSInteger)frameRateVideoUrl:(NSURL *)videoUrl;
+
++ (CGFloat)bitRateVideoUrl:(NSURL *)videoUrl;
+
 /**
  *  @param videoSize  压缩后视频宽度
  *  @param bitRate    默认为 900000, 这个决定视频容量的重要参数, 一般最大为6000000.

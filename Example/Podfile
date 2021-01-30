@@ -16,4 +16,8 @@ target 'PvtMac' do
   platform :macos, '10.15'
   pod 'PoporVideoTool', :path => '../'
   
+  pod 'Masonry'
+  pod 'ReactiveObjC'
+  pod 'PoporFoundation'
+  
 end

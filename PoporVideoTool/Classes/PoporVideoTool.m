@@ -461,6 +461,54 @@
     }
 }
 
++ (CGFloat)durationVideoUrl:(NSURL *)videoUrl {
+    if (!videoUrl) {
+        return 0;
+    }
+    AVURLAsset * asset = [AVURLAsset assetWithURL:videoUrl];
+    CMTime time = [asset duration];
+    CGFloat seconds = ceil(time.value/time.timescale);
+    return seconds;
+}
+
++ (NSInteger)frameRateVideoUrl:(NSURL *)videoUrl {
+    if (!videoUrl) {
+        return 0;
+    }
+    
+    AVAsset *asset  = [AVAsset assetWithURL:videoUrl];
+    NSArray *tracks = [asset tracksWithMediaType:AVMediaTypeVideo];
+    if ([tracks count] > 0) {
+        AVAssetTrack *videoTrack = tracks[0];
+        
+        NSInteger frameRate = [videoTrack nominalFrameRate];
+        //float bps = [videoTrack estimatedDataRate];
+        //NSLog(@"Frame rate == %f",frameRate);
+        //NSLog(@"bps rate == %f",bps);
+        
+        return frameRate;
+    }else{
+        return 0;
+    }
+}
+
++ (CGFloat)bitRateVideoUrl:(NSURL *)videoUrl {
+    if (!videoUrl) {
+        return 0;
+    }
+    
+    AVAsset *asset  = [AVAsset assetWithURL:videoUrl];
+    NSArray *tracks = [asset tracksWithMediaType:AVMediaTypeVideo];
+    if ([tracks count] > 0) {
+        AVAssetTrack *videoTrack = tracks[0];
+        float bps = [videoTrack estimatedDataRate];
+        return bps;
+    }else{
+        return 0;
+    }
+}
+
+
 + (NSDictionary *)dicVideoSettingsSize:(CGSize)videoSize bitRate:(CGFloat)bitRate {
     if (bitRate <= 0) {
         bitRate = 900000;

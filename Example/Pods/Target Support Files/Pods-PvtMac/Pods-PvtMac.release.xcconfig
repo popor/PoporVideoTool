@@ -1,9 +1,9 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PoporVideoTool-macOS"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Masonry-macOS" "${PODS_CONFIGURATION_BUILD_DIR}/PoporFoundation-macOS" "${PODS_CONFIGURATION_BUILD_DIR}/PoporVideoTool-macOS" "${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC-macOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PoporVideoTool-macOS/PoporVideoTool.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Masonry-macOS/Masonry.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/PoporFoundation-macOS/PoporFoundation.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/PoporVideoTool-macOS/PoporVideoTool.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC-macOS/ReactiveObjC.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "Foundation" -framework "PoporVideoTool"
+OTHER_LDFLAGS = $(inherited) -framework "AppKit" -framework "Foundation" -framework "Masonry" -framework "PoporFoundation" -framework "PoporVideoTool" -framework "ReactiveObjC"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

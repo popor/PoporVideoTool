@@ -175,10 +175,16 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry-macOS/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PoporFoundation-macOS/PoporFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PoporVideoTool-macOS/PoporVideoTool.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC-macOS/ReactiveObjC.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry-macOS/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PoporFoundation-macOS/PoporFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PoporVideoTool-macOS/PoporVideoTool.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC-macOS/ReactiveObjC.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
