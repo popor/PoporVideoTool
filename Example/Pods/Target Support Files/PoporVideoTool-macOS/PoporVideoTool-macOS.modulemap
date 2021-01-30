@@ -1,0 +1,6 @@
+framework module PoporVideoTool {
+  umbrella header "PoporVideoTool-macOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

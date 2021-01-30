@@ -19,16 +19,13 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target  = '8.0' # minimum SDK with autolayout
-  s.osx.deployment_target  = '10.13' # minimum SDK with autolayout
+  s.osx.deployment_target  = '10.15' # minimum SDK with autolayout
   s.tvos.deployment_target = '9.0' # minimum SDK with autolayout
 
+  s.ios.frameworks         = 'Foundation'
+  s.tvos.frameworks        = 'Foundation'
+  s.osx.frameworks         = 'AppKit'
+  
   s.source_files = 'PoporVideoTool/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'PoporVideoTool' => ['PoporVideoTool/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

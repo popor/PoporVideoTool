@@ -16,8 +16,17 @@
   },
   "platforms": {
     "ios": "8.0",
-    "osx": "10.13",
+    "osx": "10.15",
     "tvos": "9.0"
+  },
+  "ios": {
+    "frameworks": "Foundation"
+  },
+  "tvos": {
+    "frameworks": "Foundation"
+  },
+  "osx": {
+    "frameworks": "AppKit"
   },
   "source_files": "PoporVideoTool/Classes/**/*"
 }

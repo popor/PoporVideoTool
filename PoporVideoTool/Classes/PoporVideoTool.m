@@ -465,12 +465,25 @@
     if (bitRate <= 0) {
         bitRate = 900000;
     }
+    
     NSString * codeKey;
-    if (@available(iOS 11, *) || @available(macOS 10.13, *)) {
+#if TARGET_OS_OSX//mac
+    codeKey = AVVideoCodecTypeH264;
+#elif TARGET_OS_IOS
+    //TARGET_OS_IOS// ioc
+    if (@available(iOS 11, *)) {
         codeKey = AVVideoCodecTypeH264;
     } else {
         codeKey = AVVideoCodecH264;
     }
+#elif TARGET_OS_TV
+    if (@available(tvOS 11, *)) {
+        codeKey = AVVideoCodecTypeH264;
+    } else {
+        codeKey = AVVideoCodecH264;
+    }
+    
+#endif
     
     NSDictionary * dic = @{
         AVVideoCodecKey : codeKey, //之前为 AVVideoCodecH264,

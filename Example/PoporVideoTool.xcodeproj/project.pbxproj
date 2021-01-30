@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06BD524C69F61E5B4F300C37 /* Pods_PoporVideoTool_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C45BC77D7EC6348A1181570E /* Pods_PoporVideoTool_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -16,28 +15,22 @@
 		6003F59E195388D20070C39A /* DemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* DemoAppDelegate.m */; };
 		6003F5A7195388D20070C39A /* DemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* DemoVC.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
-		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
-		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
-		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
-		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		C3EDE9E725C5103500FAC920 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDE9E625C5103500FAC920 /* AppDelegate.m */; };
+		C3EDE9EA25C5103500FAC920 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDE9E925C5103500FAC920 /* ViewController.m */; };
+		C3EDE9EC25C5103700FAC920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3EDE9EB25C5103700FAC920 /* Assets.xcassets */; };
+		C3EDE9EF25C5103700FAC920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3EDE9ED25C5103700FAC920 /* Main.storyboard */; };
+		C3EDE9F225C5103700FAC920 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDE9F125C5103700FAC920 /* main.m */; };
+		C3EDEB2A25C52D4C00FAC920 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EDEB2925C52D4C00FAC920 /* Cocoa.framework */; };
 		D0038198248A16C8ABB3D492 /* Pods_PoporVideoTool_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D844ACF882DB48A8681811E5 /* Pods_PoporVideoTool_Example.framework */; };
+		D6CF77C2904BAE62A011A153 /* Pods_PvtMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0F090451604DA0A0687EE8 /* Pods_PvtMac.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6003F5B3195388D20070C39A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6003F582195388D10070C39A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6003F589195388D20070C39A;
-			remoteInfo = PoporVideoTool;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		292FB4A4C29CD4CBC4F6F37C /* PoporVideoTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PoporVideoTool.podspec; path = ../PoporVideoTool.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		37033E94E82CD2378FA899CB /* Pods-PvtMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PvtMac.debug.xcconfig"; path = "Target Support Files/Pods-PvtMac/Pods-PvtMac.debug.xcconfig"; sourceTree = "<group>"; };
+		3F0F090451604DA0A0687EE8 /* Pods_PvtMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PvtMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4141ADF0230E884D828C0C65 /* Pods-PoporVideoTool_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporVideoTool_Example.release.xcconfig"; path = "Target Support Files/Pods-PoporVideoTool_Example/Pods-PoporVideoTool_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* PoporVideoTool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoporVideoTool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,21 +45,31 @@
 		6003F5A5195388D20070C39A /* DemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoVC.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* DemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoVC.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* PoporVideoTool_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoporVideoTool_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
-		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
-		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		9EE7C54897F6EBA98E57DEB2 /* Pods-PoporVideoTool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporVideoTool_Tests.debug.xcconfig"; path = "Target Support Files/Pods-PoporVideoTool_Tests/Pods-PoporVideoTool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A92DF0BC48E3127F3D66C522 /* Pods-PoporVideoTool_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporVideoTool_Example.debug.xcconfig"; path = "Target Support Files/Pods-PoporVideoTool_Example/Pods-PoporVideoTool_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B0FDF8986B256FAC11DAF536 /* Pods-PvtMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PvtMac.release.xcconfig"; path = "Target Support Files/Pods-PvtMac/Pods-PvtMac.release.xcconfig"; sourceTree = "<group>"; };
+		C3EDE95325C50E8400FAC920 /* PoporVideoTool_Example copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PoporVideoTool_Example copy-Info.plist"; path = "/Users/popor/Documents/wkq/GitHubSDK/PoporVideoTool/Example/PoporVideoTool_Example copy-Info.plist"; sourceTree = "<absolute>"; };
+		C3EDE9E325C5103500FAC920 /* PvtMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PvtMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3EDE9E525C5103500FAC920 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C3EDE9E625C5103500FAC920 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C3EDE9E825C5103500FAC920 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C3EDE9E925C5103500FAC920 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C3EDE9EB25C5103700FAC920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C3EDE9EE25C5103700FAC920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C3EDE9F025C5103700FAC920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3EDE9F125C5103700FAC920 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3EDE9F325C5103700FAC920 /* PvtMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PvtMac.entitlements; sourceTree = "<group>"; };
+		C3EDE9FC25C5103700FAC920 /* PvtMacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PvtMacTests.m; sourceTree = "<group>"; };
+		C3EDE9FE25C5103700FAC920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3EDEA0725C5103700FAC920 /* PvtMacUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PvtMacUITests.m; sourceTree = "<group>"; };
+		C3EDEA0925C5103700FAC920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3EDEB2925C52D4C00FAC920 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		C45BC77D7EC6348A1181570E /* Pods_PoporVideoTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporVideoTool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC97124649555F86E472ABA9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D844ACF882DB48A8681811E5 /* Pods_PoporVideoTool_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporVideoTool_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6676773D754BE804015FF2F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		EF170F0550DAC1F15701D3E9 /* Pods-PoporVideoTool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporVideoTool_Tests.release.xcconfig"; path = "Target Support Files/Pods-PoporVideoTool_Tests/Pods-PoporVideoTool_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +84,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6003F5AB195388D20070C39A /* Frameworks */ = {
+		C3EDE9E025C5103500FAC920 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
-				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
-				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				06BD524C69F61E5B4F300C37 /* Pods_PoporVideoTool_Tests.framework in Frameworks */,
+				C3EDEB2A25C52D4C00FAC920 /* Cocoa.framework in Frameworks */,
+				D6CF77C2904BAE62A011A153 /* Pods_PvtMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,10 +101,13 @@
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for PoporVideoTool */,
-				6003F5B5195388D20070C39A /* Tests */,
+				C3EDE9E425C5103500FAC920 /* PvtMac */,
+				C3EDE9FB25C5103700FAC920 /* PvtMacTests */,
+				C3EDEA0625C5103700FAC920 /* PvtMacUITests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				EC77164716E7E53F1710B87C /* Pods */,
+				C3EDE95325C50E8400FAC920 /* PoporVideoTool_Example copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				6003F58A195388D20070C39A /* PoporVideoTool_Example.app */,
-				6003F5AE195388D20070C39A /* PoporVideoTool_Tests.xctest */,
+				C3EDE9E325C5103500FAC920 /* PvtMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,12 +123,14 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3EDEB2925C52D4C00FAC920 /* Cocoa.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				D844ACF882DB48A8681811E5 /* Pods_PoporVideoTool_Example.framework */,
 				C45BC77D7EC6348A1181570E /* Pods_PoporVideoTool_Tests.framework */,
+				3F0F090451604DA0A0687EE8 /* Pods_PvtMac.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,25 +159,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6003F5B5195388D20070C39A /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
-				6003F5B6195388D20070C39A /* Supporting Files */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		6003F5B6195388D20070C39A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6003F5B7195388D20070C39A /* Tests-Info.plist */,
-				6003F5B8195388D20070C39A /* InfoPlist.strings */,
-				606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,13 +180,55 @@
 			name = other;
 			sourceTree = "<group>";
 		};
+		C3EDE9E425C5103500FAC920 /* PvtMac */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDEA1725C5107C00FAC920 /* other */,
+				C3EDE9E525C5103500FAC920 /* AppDelegate.h */,
+				C3EDE9E625C5103500FAC920 /* AppDelegate.m */,
+				C3EDE9E825C5103500FAC920 /* ViewController.h */,
+				C3EDE9E925C5103500FAC920 /* ViewController.m */,
+			);
+			path = PvtMac;
+			sourceTree = "<group>";
+		};
+		C3EDE9FB25C5103700FAC920 /* PvtMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDE9FC25C5103700FAC920 /* PvtMacTests.m */,
+				C3EDE9FE25C5103700FAC920 /* Info.plist */,
+			);
+			path = PvtMacTests;
+			sourceTree = "<group>";
+		};
+		C3EDEA0625C5103700FAC920 /* PvtMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDEA0725C5103700FAC920 /* PvtMacUITests.m */,
+				C3EDEA0925C5103700FAC920 /* Info.plist */,
+			);
+			path = PvtMacUITests;
+			sourceTree = "<group>";
+		};
+		C3EDEA1725C5107C00FAC920 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDE9EB25C5103700FAC920 /* Assets.xcassets */,
+				C3EDE9ED25C5103700FAC920 /* Main.storyboard */,
+				C3EDE9F025C5103700FAC920 /* Info.plist */,
+				C3EDE9F125C5103700FAC920 /* main.m */,
+				C3EDE9F325C5103700FAC920 /* PvtMac.entitlements */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
 		EC77164716E7E53F1710B87C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				A92DF0BC48E3127F3D66C522 /* Pods-PoporVideoTool_Example.debug.xcconfig */,
 				4141ADF0230E884D828C0C65 /* Pods-PoporVideoTool_Example.release.xcconfig */,
-				9EE7C54897F6EBA98E57DEB2 /* Pods-PoporVideoTool_Tests.debug.xcconfig */,
-				EF170F0550DAC1F15701D3E9 /* Pods-PoporVideoTool_Tests.release.xcconfig */,
+				37033E94E82CD2378FA899CB /* Pods-PvtMac.debug.xcconfig */,
+				B0FDF8986B256FAC11DAF536 /* Pods-PvtMac.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -226,24 +255,24 @@
 			productReference = 6003F58A195388D20070C39A /* PoporVideoTool_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6003F5AD195388D20070C39A /* PoporVideoTool_Tests */ = {
+		C3EDE9E225C5103500FAC920 /* PvtMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "PoporVideoTool_Tests" */;
+			buildConfigurationList = C3EDEA0A25C5103700FAC920 /* Build configuration list for PBXNativeTarget "PvtMac" */;
 			buildPhases = (
-				0F73492AB0EE09AE90EB4880 /* [CP] Check Pods Manifest.lock */,
-				6003F5AA195388D20070C39A /* Sources */,
-				6003F5AB195388D20070C39A /* Frameworks */,
-				6003F5AC195388D20070C39A /* Resources */,
+				D4F504453C63DA74838898A8 /* [CP] Check Pods Manifest.lock */,
+				C3EDE9DF25C5103500FAC920 /* Sources */,
+				C3EDE9E025C5103500FAC920 /* Frameworks */,
+				C3EDE9E125C5103500FAC920 /* Resources */,
+				E42761872C1F400E3624BC59 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6003F5B4195388D20070C39A /* PBXTargetDependency */,
 			);
-			name = PoporVideoTool_Tests;
-			productName = PoporVideoToolTests;
-			productReference = 6003F5AE195388D20070C39A /* PoporVideoTool_Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = PvtMac;
+			productName = PvtMac;
+			productReference = C3EDE9E325C5103500FAC920 /* PvtMac.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -258,8 +287,10 @@
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = 7DUQZP3WD7;
 					};
-					6003F5AD195388D20070C39A = {
-						TestTargetID = 6003F589195388D20070C39A;
+					C3EDE9E225C5103500FAC920 = {
+						CreatedOnToolsVersion = 12.4;
+						DevelopmentTeam = 5TP98E5R7H;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -278,7 +309,7 @@
 			projectRoot = "";
 			targets = (
 				6003F589195388D20070C39A /* PoporVideoTool_Example */,
-				6003F5AD195388D20070C39A /* PoporVideoTool_Tests */,
+				C3EDE9E225C5103500FAC920 /* PvtMac */,
 			);
 		};
 /* End PBXProject section */
@@ -295,39 +326,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6003F5AC195388D20070C39A /* Resources */ = {
+		C3EDE9E125C5103500FAC920 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+				C3EDE9EC25C5103700FAC920 /* Assets.xcassets in Resources */,
+				C3EDE9EF25C5103700FAC920 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0F73492AB0EE09AE90EB4880 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PoporVideoTool_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		51A6B3BFA52113504428AA77 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,7 +376,7 @@
 				"${BUILT_PRODUCTS_DIR}/PoporMedia/PoporMedia.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporOrientation/PoporOrientation.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporUI/PoporUI.framework",
-				"${BUILT_PRODUCTS_DIR}/PoporVideoTool/PoporVideoTool.framework",
+				"${BUILT_PRODUCTS_DIR}/PoporVideoTool-iOS/PoporVideoTool.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SKFCamera/SKFCamera.framework",
@@ -394,6 +404,46 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PoporVideoTool_Example/Pods-PoporVideoTool_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D4F504453C63DA74838898A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PvtMac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E42761872C1F400E3624BC59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PvtMac/Pods-PvtMac-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PoporVideoTool-macOS/PoporVideoTool.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PoporVideoTool.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PvtMac/Pods-PvtMac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -407,23 +457,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6003F5AA195388D20070C39A /* Sources */ = {
+		C3EDE9DF25C5103500FAC920 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				C3EDE9EA25C5103500FAC920 /* ViewController.m in Sources */,
+				C3EDE9F225C5103700FAC920 /* main.m in Sources */,
+				C3EDE9E725C5103500FAC920 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6003F5B4195388D20070C39A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6003F589195388D20070C39A /* PoporVideoTool_Example */;
-			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6003F596195388D20070C39A /* InfoPlist.strings */ = {
@@ -434,20 +478,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		6003F5B8195388D20070C39A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6003F5B9195388D20070C39A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				71719F9E1E33DC2100824A3D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C3EDE9ED25C5103700FAC920 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3EDE9EE25C5103700FAC920 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -560,49 +604,92 @@
 			};
 			name = Release;
 		};
-		6003F5C3195388D20070C39A /* Debug */ = {
+		C3EDEA0B25C5103700FAC920 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EE7C54897F6EBA98E57DEB2 /* Pods-PoporVideoTool_Tests.debug.xcconfig */;
+			baseConfigurationReference = 37033E94E82CD2378FA899CB /* Pods-PvtMac.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Tests/Tests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = PvtMac/PvtMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5TP98E5R7H;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = PvtMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.popor.PvtMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoporVideoTool_Example.app/PoporVideoTool_Example";
-				WRAPPER_EXTENSION = xctest;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		6003F5C4195388D20070C39A /* Release */ = {
+		C3EDEA0C25C5103700FAC920 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF170F0550DAC1F15701D3E9 /* Pods-PoporVideoTool_Tests.release.xcconfig */;
+			baseConfigurationReference = B0FDF8986B256FAC11DAF536 /* Pods-PvtMac.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
-				INFOPLIST_FILE = "Tests/Tests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = PvtMac/PvtMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5TP98E5R7H;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = PvtMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.popor.PvtMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoporVideoTool_Example.app/PoporVideoTool_Example";
-				WRAPPER_EXTENSION = xctest;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -627,11 +714,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "PoporVideoTool_Tests" */ = {
+		C3EDEA0A25C5103700FAC920 /* Build configuration list for PBXNativeTarget "PvtMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6003F5C3195388D20070C39A /* Debug */,
-				6003F5C4195388D20070C39A /* Release */,
+				C3EDEA0B25C5103700FAC920 /* Debug */,
+				C3EDEA0C25C5103700FAC920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

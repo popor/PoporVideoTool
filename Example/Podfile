@@ -1,8 +1,7 @@
 use_frameworks!
 
-platform :ios, '9.0'
-
 target 'PoporVideoTool_Example' do
+  platform :ios, '9.0'
   pod 'PoporVideoTool', :path => '../'
   
   pod 'PoporUI'
@@ -11,9 +10,10 @@ target 'PoporVideoTool_Example' do
   pod 'PoporMedia'
   pod 'PoporAVPlayer'
   
-  target 'PoporVideoTool_Tests' do
-    inherit! :search_paths
+end
 
-    
-  end
+target 'PvtMac' do
+  platform :macos, '10.15'
+  pod 'PoporVideoTool', :path => '../'
+  
 end
