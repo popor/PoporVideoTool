@@ -47,6 +47,7 @@
     return self;
 }
 
+#pragma mark - 压缩函数
 - (void)compressCompletion:(PoporVideoBlock_PTool _Nonnull)completionBlock {
     [self compressCompletion:completionBlock progress:nil];
 }
@@ -458,6 +459,42 @@
     }else{
         return CGSizeZero;
     }
+}
+
++ (NSDictionary *)dicVideoSettingsSize:(CGSize)videoSize bitRate:(CGFloat)bitRate {
+    if (bitRate <= 0) {
+        bitRate = 900000;
+    }
+    NSString * codeKey;
+    if (@available(iOS 11, *) || @available(macOS 10.13, *)) {
+        codeKey = AVVideoCodecTypeH264;
+    } else {
+        codeKey = AVVideoCodecH264;
+    }
+    
+    NSDictionary * dic = @{
+        AVVideoCodecKey : codeKey, //之前为 AVVideoCodecH264,
+        AVVideoWidthKey : @(videoSize.width),
+        AVVideoHeightKey: @(videoSize.height),
+        AVVideoCompressionPropertiesKey:
+            @{
+                AVVideoAverageBitRateKey: @(bitRate),
+                AVVideoProfileLevelKey  : AVVideoProfileLevelH264High40,
+            },
+    };
+    
+    return dic;
+}
+
++ (NSDictionary *)dicAudioSettings {
+    NSDictionary * dic = @{
+        AVFormatIDKey        : @(kAudioFormatMPEG4AAC),
+        AVNumberOfChannelsKey: @2,
+        AVSampleRateKey      : @44100,
+        AVEncoderBitRateKey  : @128000,
+    };
+    
+    return dic;
 }
 
 //+ (CGSize)videoSizeFromUrl_old:(NSString *)url {

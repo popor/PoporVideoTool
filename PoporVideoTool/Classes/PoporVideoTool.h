@@ -185,6 +185,8 @@ typedef void(^PoporVideoBlock_PFloat) (CGFloat progress);
  */
 - (id)initWithAsset:(AVAsset *)asset;
 
+
+#pragma mark - 压缩函数
 /**
  * Starts the asynchronous execution of an export session.
  *
@@ -214,7 +216,15 @@ typedef void(^PoporVideoBlock_PFloat) (CGFloat progress);
 
 #pragma mark - tool
 + (CGSize)sizeFrom:(CGSize)originSize toSize:(CGSize)targetSize;
-+ (CGSize)sizeVideoUrl:(NSURL *)videoUrl ;
++ (CGSize)sizeVideoUrl:(NSURL *)videoUrl;
+
+/**
+ *  @param videoSize  压缩后视频宽度
+ *  @param bitRate    默认为 900000, 这个决定视频容量的重要参数, 一般最大为6000000.
+ */
++ (NSDictionary *)dicVideoSettingsSize:(CGSize)videoSize bitRate:(CGFloat)bitRate;
+
++ (NSDictionary *)dicAudioSettings;
 
 @end
 

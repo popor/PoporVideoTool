@@ -127,7 +127,7 @@ PODS:
     - PoporFoundation/NSString
     - PoporFoundation/Prefix
     - PoporUI/UIImage
-  - PoporVideoTool (0.1.0)
+  - PoporVideoTool (1.0)
   - ReactiveObjC (3.1.1)
   - SDWebImage (5.10.3):
     - SDWebImage/Core (= 5.10.3)
@@ -172,7 +172,7 @@ SPEC CHECKSUMS:
   PoporMedia: dc9040b82a3a203ad98e0f844c76f64ac117ac4f
   PoporOrientation: fc9689a00117c6f084b7951664f5e4a94817a3e5
   PoporUI: cdbf0e5f0123099eec0966aa9a052fa41a319881
-  PoporVideoTool: 746199248e6278b0e55e76821fb46b110507e6cb
+  PoporVideoTool: 53cbdbc2d16572c4d759f1d1fd66a819f1e6e4c1
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: e378178472b735e84b007bfb55514c97948a0598
   SKFCamera: d63fa8ca23eb5ec51ade911fcbe736ffc5b37b4d

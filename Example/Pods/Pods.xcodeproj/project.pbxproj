@@ -4929,6 +4929,36 @@
 			};
 			name = Debug;
 		};
+		04EC78781B33AD4DD85FCA996B7D54F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47E1E20B38374F2E057AE976BB29348C /* PoporVideoTool.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporVideoTool/PoporVideoTool-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporVideoTool/PoporVideoTool-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporVideoTool/PoporVideoTool.modulemap";
+				PRODUCT_MODULE_NAME = PoporVideoTool;
+				PRODUCT_NAME = PoporVideoTool;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		0EAF36138F7E950EAC628043A4A9C6BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D420A9C1654F2555E21ED6558D51ECD /* ReactiveObjC.debug.xcconfig */;
@@ -5242,36 +5272,6 @@
 			};
 			name = Release;
 		};
-		4A96D03D334AF3EC4D63098C13C7622A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47E1E20B38374F2E057AE976BB29348C /* PoporVideoTool.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporVideoTool/PoporVideoTool-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporVideoTool/PoporVideoTool-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporVideoTool/PoporVideoTool.modulemap";
-				PRODUCT_MODULE_NAME = PoporVideoTool;
-				PRODUCT_NAME = PoporVideoTool;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		4FFCB8AA7F8430748E608DF072083F24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B04EB9C03D4305E7F5CFD3120EABB421 /* SDWebImage.debug.xcconfig */;
@@ -5355,6 +5355,37 @@
 				MODULEMAP_FILE = "Target Support Files/TZImagePickerController/TZImagePickerController.modulemap";
 				PRODUCT_MODULE_NAME = TZImagePickerController;
 				PRODUCT_NAME = TZImagePickerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5F4F210C0903DB4D1FAEE2C9A1683EA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4579649FC2AD72F1677092CF8C53B169 /* PoporVideoTool.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporVideoTool/PoporVideoTool-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporVideoTool/PoporVideoTool-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporVideoTool/PoporVideoTool.modulemap";
+				PRODUCT_MODULE_NAME = PoporVideoTool;
+				PRODUCT_NAME = PoporVideoTool;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -5672,37 +5703,6 @@
 			};
 			name = Debug;
 		};
-		A3B2399059726E0395E444BACBB9A209 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4579649FC2AD72F1677092CF8C53B169 /* PoporVideoTool.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporVideoTool/PoporVideoTool-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporVideoTool/PoporVideoTool-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporVideoTool/PoporVideoTool.modulemap";
-				PRODUCT_MODULE_NAME = PoporVideoTool;
-				PRODUCT_NAME = PoporVideoTool;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		A65A73A3A447069B8F042F4961721623 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B045F30ADC7025ACB0A356300625CB90 /* PoporFoundation.release.xcconfig */;
@@ -5987,8 +5987,8 @@
 		1805974841E476896C27E480ADBF4297 /* Build configuration list for PBXNativeTarget "PoporVideoTool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4A96D03D334AF3EC4D63098C13C7622A /* Debug */,
-				A3B2399059726E0395E444BACBB9A209 /* Release */,
+				04EC78781B33AD4DD85FCA996B7D54F0 /* Debug */,
+				5F4F210C0903DB4D1FAEE2C9A1683EA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

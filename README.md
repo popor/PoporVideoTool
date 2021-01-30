@@ -20,6 +20,48 @@ it, simply add the following line to your Podfile:
 pod 'PoporVideoTool'
 ```
 
+```objc
+#import<PoporVideoTool/PoporVideoTool.h>
+
+- (void)compressVideoUrl:(NSURL *)videoOriginUrl outputUrl:(NSURL *)outputURL{
+    // 删除目标地址
+    [NSFileManager deleteFile:outputURL.path];
+    
+    // 初始化 encoder
+    PoporVideoTool *encoder = [PoporVideoTool.alloc initWithAsset:[AVAsset assetWithURL:videoOriginUrl]];
+    encoder.outputFileType  = AVFileTypeMPEG4;
+    encoder.outputURL       = outputURL;
+    
+    // 获取压缩视频Size
+    CGSize prioritySize = CGSizeMake(540, 960);
+    CGSize originSize   = [PoporVideoTool sizeVideoUrl:videoOriginUrl];
+    CGSize targetSize   = [PoporVideoTool sizeFrom:originSize toSize:prioritySize];
+    
+    // 设置压缩配置
+    encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize bitRate:0]; // 视频参数
+    encoder.audioSettings = [PoporVideoTool dicAudioSettings]; // 音频参数
+    
+    // 异步压缩
+    [encoder compressCompletion:^(PoporVideoTool * _Nonnull poporVideoTool) {
+        switch (poporVideoTool.status) {
+            case AVAssetExportSessionStatusCompleted: {
+                NSLog(@"Video export succeeded");
+                break;
+            }
+            case AVAssetExportSessionStatusCancelled: {
+                NSLog(@"Video export cancelled");
+                break;
+            }
+            default: {
+                NSLog(@"Video export failed with error: %@ (%li)", encoder.error.localizedDescription, encoder.error.code);
+                break;
+            }
+        }
+    } progress:^(CGFloat progress) {
+        NSLog(@"progress: %f", progress);
+    }];
+}
+```
 ## Author
 
 popor, 908891024@qq.com

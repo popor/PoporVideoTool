@@ -158,6 +158,9 @@
 
 
 - (void)compressVideoUrl:(NSURL *)videoOriginUrl {
+    // 删除目标地址
+    [NSFileManager deleteFile:self.playUrl.path];
+    NSLog(@"outPath: %@", self.playUrl);
     
     __block ProgressView_Popor * pv = ({
         ProgressView_Popor * pv = [ProgressView_Popor new];
@@ -168,12 +171,7 @@
         pv;
     });
     
-    
     NSDate * date0 = [NSDate date];
-    
-    //NSString * path   = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"mp4"];
-    AVAsset * anAsset = [AVAsset assetWithURL:videoOriginUrl];
-    
     {   // 添加注释
         self.tvAtt = [NSMutableAttributedString new];
         
@@ -184,55 +182,31 @@
         self.tv.attributedText = self.tvAtt;
     }
     
-    //    NSString * folder  = @"compress";
-    //    NSString * docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    //    [[NSFileManager defaultManager] createDirectoryAtPath:[NSString stringWithFormat:@"%@/%@", docPath, folder] withIntermediateDirectories:YES attributes:nil error:nil];
-    //    NSString * outPath = [NSString stringWithFormat:@"%@/%@/compress1.mp4", docPath, folder];
-    //    NSURL * outUrl     = [NSURL fileURLWithPath:outPath];
-    //    self.playUrl       = outUrl;
+    {
+        //    NSString * path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"mp4"];
+        //    NSString * folder  = @"compress";
+        //    NSString * docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        //    [[NSFileManager defaultManager] createDirectoryAtPath:[NSString stringWithFormat:@"%@/%@", docPath, folder] withIntermediateDirectories:YES attributes:nil error:nil];
+        //    NSString * outPath = [NSString stringWithFormat:@"%@/%@/compress1.mp4", docPath, folder];
+        //    NSURL * outUrl     = [NSURL fileURLWithPath:outPath];
+        //    self.playUrl       = outUrl;
+    }
     
-    [NSFileManager deleteFile:self.playUrl.path];
+    // 初始化 encoder
+    PoporVideoTool *encoder = [PoporVideoTool.alloc initWithAsset:[AVAsset assetWithURL:videoOriginUrl]];
+    encoder.outputFileType  = AVFileTypeMPEG4;
+    encoder.outputURL       = self.playUrl;
     
-    NSLog(@"outPath: %@", self.playUrl);
+    // 获取压缩视频Size
+    CGSize prioritySize = CGSizeMake(540, 960);
+    CGSize originSize   = [PoporVideoTool sizeVideoUrl:videoOriginUrl];
+    CGSize targetSize   = [PoporVideoTool sizeFrom:originSize toSize:prioritySize];
     
+    // 设置压缩配置
+    encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize bitRate:0]; // 视频参数
+    encoder.audioSettings = [PoporVideoTool dicAudioSettings]; // 音频参数
     
-    PoporVideoTool *encoder = [PoporVideoTool.alloc initWithAsset:anAsset];
-    encoder.outputFileType = AVFileTypeMPEG4;
-    encoder.outputURL = self.playUrl;
-    
-    CGSize originSize = [PoporVideoTool sizeVideoUrl:videoOriginUrl];
-    CGSize targetSize = [PoporVideoTool sizeFrom:originSize toSize:CGSizeMake(540, 960)];
-    CGFloat width   = 1920;
-    CGFloat height  = 1080;
-    
-    width  = targetSize.width;
-    height = targetSize.height;
-    
-    CGFloat bitRate = 6* 1000 * 1000;
-    bitRate = 900 *1000;
-    
-    // 视频参数
-    encoder.videoSettings =
-    @{
-        AVVideoCodecKey : AVVideoCodecTypeH264, //之前为 AVVideoCodecH264,
-        AVVideoWidthKey : @(width),
-        AVVideoHeightKey: @(height),
-        AVVideoCompressionPropertiesKey:
-            @{
-                AVVideoAverageBitRateKey: @(bitRate),
-                AVVideoProfileLevelKey  : AVVideoProfileLevelH264High40,
-            },
-    };
-    
-    // 音频参数
-    encoder.audioSettings =
-    @{
-        AVFormatIDKey        : @(kAudioFormatMPEG4AAC),
-        AVNumberOfChannelsKey: @2,
-        AVSampleRateKey      : @44100,
-        AVEncoderBitRateKey  : @128000,
-    };
-    
+    // 异步压缩
     [encoder compressCompletion:^(PoporVideoTool * _Nonnull poporVideoTool) {
         [pv removeFromSuperview];
         pv = nil;
@@ -291,6 +265,46 @@
     PoporAVPlayerVC * vc = [[PoporAVPlayerVC alloc] initWithDic:dic];
     
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (void)compressVideoUrl:(NSURL *)videoOriginUrl outputUrl:(NSURL *)outputURL{
+    // 删除目标地址
+    [NSFileManager deleteFile:outputURL.path];
+    
+    // 初始化 encoder
+    PoporVideoTool *encoder = [PoporVideoTool.alloc initWithAsset:[AVAsset assetWithURL:videoOriginUrl]];
+    encoder.outputFileType  = AVFileTypeMPEG4;
+    encoder.outputURL       = outputURL;
+    
+    // 获取压缩视频Size
+    CGSize prioritySize = CGSizeMake(540, 960);
+    CGSize originSize   = [PoporVideoTool sizeVideoUrl:videoOriginUrl];
+    CGSize targetSize   = [PoporVideoTool sizeFrom:originSize toSize:prioritySize];
+    
+    // 设置压缩配置
+    encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize bitRate:0]; // 视频参数
+    encoder.audioSettings = [PoporVideoTool dicAudioSettings]; // 音频参数
+    
+    // 异步压缩
+    [encoder compressCompletion:^(PoporVideoTool * _Nonnull poporVideoTool) {
+        switch (poporVideoTool.status) {
+            case AVAssetExportSessionStatusCompleted: {
+                NSLog(@"Video export succeeded");
+                break;
+            }
+            case AVAssetExportSessionStatusCancelled: {
+                NSLog(@"Video export cancelled");
+                break;
+            }
+            default: {
+                NSLog(@"Video export failed with error: %@ (%li)", encoder.error.localizedDescription, encoder.error.code);
+                break;
+            }
+        }
+    } progress:^(CGFloat progress) {
+        NSLog(@"progress: %f", progress);
+    }];
 }
 
 @end
