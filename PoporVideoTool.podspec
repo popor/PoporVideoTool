@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.ios.frameworks         = 'Foundation'
   s.tvos.frameworks        = 'Foundation'
-  s.osx.frameworks         = 'AppKit'
+  s.osx.frameworks         = 'Foundation'
   
   s.source_files = 'PoporVideoTool/Classes/**/*'
   

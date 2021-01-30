@@ -48,6 +48,7 @@
 		0BB0BB84ED49B8F93E76DAB6BB3D4756 /* TZImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 871CA187296C0039B74B6DD9C5F782A4 /* TZImageManager.m */; };
 		0C12A2DD255CB5DD7E0FA1E278644E6B /* NSSet+RACSequenceAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 96597EE57E8606ADAAFDAAB9C4895EFB /* NSSet+RACSequenceAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C4B8A11568C6F61D6CEB85356BA3951 /* NSData+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E47066E10BFD05DC238DC459922C0 /* NSData+RACSupport.m */; };
+		0C509F28E573AB7BA67EBC9D6CD782F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD34CDAA34DCB7A4C5F1F35BB44A645 /* Foundation.framework */; };
 		0C6CA36FDA7230C069237B71B595A744 /* PoporImageBrowerBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = EF29EDEFD05F3D479B8F64DB635C89FB /* PoporImageBrowerBundle.m */; };
 		0CF386D7BC979B099C2E7BFA0246B09E /* SDImageAPNGCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E8BC1DB5D2AEB463AE04313D9D010B /* SDImageAPNGCoder.m */; };
 		0D2396C3C2D36AB70276F40EE9752841 /* RACEagerSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 495145668F1EA495ED77115A6D6D64FB /* RACEagerSequence.m */; };
@@ -95,7 +96,6 @@
 		1D49EFA5ACDA4632B3FECB5A1CE1339A /* PoporOrientation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86E82E6DB7C5F0C920388BF9A2A83B00 /* PoporOrientation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D89A7BE2CB18A249DAB136758339C19 /* PoporImageBrower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D586FC01CB2FBC905B05415EFA1244C2 /* PoporImageBrower.framework */; };
 		1E468EC0DE3D8DCD9AF77A9D851DA9EC /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 191CC199FB07F83073B371FF32DAD84F /* UIImage+FixOrientation.m */; };
-		1EB59A9874B01D521600687DA6A6AA9C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B0994DCDFE5E17782DE6D7D6A4FF08 /* Cocoa.framework */; };
 		1FC502A47585E94353BF8EE61AD4345C /* SDWebImageError.h in Headers */ = {isa = PBXBuildFile; fileRef = 756E9C05A039E181925A3F4D7225A8C4 /* SDWebImageError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FE5EB0F2EBCCBFA17B58331AA21F0F5 /* PoporImageBrower-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D67D8A7E928F498DCE7F6BF2FFE0D9 /* PoporImageBrower-dummy.m */; };
 		202B19FC423AFA81C454F46A4C5798D9 /* SDImageCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = EFDDBD28FDD7983983274970FE280B33 /* SDImageCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -280,7 +280,6 @@
 		64E5E613BC9FB283C237A684A3871680 /* NSString+pIDCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C998D5F80552DB47A6F117A465C81F4 /* NSString+pIDCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64F836DC9512DA825CAA879787031A5D /* UISwitch+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BF8F0B976B5BC51987DF82781570D2 /* UISwitch+RACSignalSupport.m */; };
 		6506AA099CBF04AA62CC6ED336CD8F14 /* UIImage+ForceDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6E3AE2F45B445833B4D513D3EE140B /* UIImage+ForceDecode.m */; };
-		65DD6807C4956F54E10D807C3BBDF4F9 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1673F2A25CA5E9CDB768424AC95BE52E /* AppKit.framework */; };
 		660F326175ED8088C244687B665F425C /* UILabel+pSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7968A17C64EE6100CDB830FC6F5C5B5A /* UILabel+pSize.m */; };
 		6664929498DB9278A08DEB7A4C42DE3E /* NSArray+RACSequenceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3A7C0DF19CC70FBDECEC4FC2C19FB8 /* NSArray+RACSequenceAdditions.m */; };
 		667B4DA9B4E867520FDF8BD60FC6CF08 /* PoporImageEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E820F8692E0825F53CD042BC76B15ED /* PoporImageEntity.m */; };
@@ -314,6 +313,7 @@
 		6DC7DD6F62BD4E4CE8BD89799F0A5C66 /* UIButton+pUIEdgeInsets.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F2E3D93F08790344C297C2C10109C3 /* UIButton+pUIEdgeInsets.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E5C0025CC352D2BCD9F791F4EBA71E0 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = E221D0B6041001CEF80E12641740602B /* UIImage+GIF.m */; };
 		6EC0A44C56BE1B441B4256C2A5DC1DA0 /* PoporImageBrowerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5580BAE78E07046C5FC55BD3E0ADED1C /* PoporImageBrowerCell.m */; };
+		6EC8BBA3B589CFF03FC8AB026A5924F5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765D10B8CFA3D36E622FA367A96C2C04 /* Cocoa.framework */; };
 		6ED5A99AD9D8488B44BC0C7037604BBE /* SDWeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 96CAFCCEFF8D3CCA726D0083A92423F3 /* SDWeakProxy.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		6FDA35F84ACE3DED9817603A193C103A /* TZPhotoPickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = F232290165F47062575124123281E116 /* TZPhotoPickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70D5F4412EEAF03EFA5989807662DCEB /* SDImageCacheDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C8051E227C51DF74E18776DAD913D5 /* SDImageCacheDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -530,7 +530,7 @@
 		BE5DA7CA3099B82658712499F8C19977 /* NSString+pSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2F3D8FAB89E9BB005CAEA4B163A94 /* NSString+pSwizzling.m */; };
 		BE647B41357C5E7C82A406AC965BD78E /* RACAnnotations.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F4BE573143B2DC1A9C0A0EFEE6D49B /* RACAnnotations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF75BDF551597D3FA30A83ACA2E18530 /* NSString+RACKeyPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 70920BE885A62716881951AA23853D73 /* NSString+RACKeyPathUtilities.m */; };
-		C00E2B28C3A16E58CB25BC48317C1B61 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B0994DCDFE5E17782DE6D7D6A4FF08 /* Cocoa.framework */; };
+		C00E2B28C3A16E58CB25BC48317C1B61 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765D10B8CFA3D36E622FA367A96C2C04 /* Cocoa.framework */; };
 		C0387D99679F6516481044F23038309E /* UIDevice+pTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D53EEF7B36CF9B3BBD6901B2C4B9B138 /* UIDevice+pTool.m */; };
 		C0861ADB4C5FA30F4F9E051F7638A264 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C50CC0F5062F4CAA4D619F0AB2201BA /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		C1FEC1F901795023C8D0F61A132AEF38 /* PFeedbackGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = A17AB2AC866A693D317A250AB97F5C87 /* PFeedbackGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1014,7 +1014,6 @@
 		15FC7DB56A5DCFAE722F90B0141632B1 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/Core/SDImageCache.h; sourceTree = "<group>"; };
 		1618D3B6CCDBD0074C4D94A5C2EC13FC /* SKFCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SKFCamera.debug.xcconfig; sourceTree = "<group>"; };
 		162BDA98D577C9D8CE8C734E4B43CE96 /* SDImageAssetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageAssetManager.h; path = SDWebImage/Private/SDImageAssetManager.h; sourceTree = "<group>"; };
-		1673F2A25CA5E9CDB768424AC95BE52E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
 		17B232EB0952ECB9AEF63D31A22A3BEF /* RACKVOProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACKVOProxy.h; path = ReactiveObjC/RACKVOProxy.h; sourceTree = "<group>"; };
 		1868ABBA8810BAF8603B67EB611662B6 /* SDAnimatedImagePlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImagePlayer.m; path = SDWebImage/Core/SDAnimatedImagePlayer.m; sourceTree = "<group>"; };
 		18EBBAD0EC667E3A0358BCBB48AA3FA3 /* PoporInterfaceOrientation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoporInterfaceOrientation.h; path = PoporOrientation/Classes/PoporInterfaceOrientation.h; sourceTree = "<group>"; };
@@ -1161,7 +1160,6 @@
 		44F31B501D1971FF4C18BCF45202DD76 /* UIDatePicker+RACSignalSupport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDatePicker+RACSignalSupport.h"; path = "ReactiveObjC/UIDatePicker+RACSignalSupport.h"; sourceTree = "<group>"; };
 		44FA25AA8C56C58144BC3FF74630F8C7 /* UIImage+pTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+pTool.h"; path = "PoporUI/Classes/UIImage/UIImage+pTool.h"; sourceTree = "<group>"; };
 		458C007C834DE4FF74A464E4B4D5CE5C /* PoporOrientation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoporOrientation.h; path = PoporOrientation/Classes/PoporOrientation.h; sourceTree = "<group>"; };
-		45B0994DCDFE5E17782DE6D7D6A4FF08 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		45C8051E227C51DF74E18776DAD913D5 /* SDImageCacheDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheDefine.h; path = SDWebImage/Core/SDImageCacheDefine.h; sourceTree = "<group>"; };
 		472282DCCB5AD2B5DB2ED178AEB681AF /* PoporVideoTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PoporVideoTool.framework; path = "PoporVideoTool-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		475DF5A3632DAB2EB2AB4EEB7461D3A8 /* SDDeviceHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDeviceHelper.h; path = SDWebImage/Private/SDDeviceHelper.h; sourceTree = "<group>"; };
@@ -1301,6 +1299,7 @@
 		74A3ACDD89E8A8313E7D8EEC1D88B208 /* RACKVOTrampoline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACKVOTrampoline.h; path = ReactiveObjC/RACKVOTrampoline.h; sourceTree = "<group>"; };
 		756E9C05A039E181925A3F4D7225A8C4 /* SDWebImageError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageError.h; path = SDWebImage/Core/SDWebImageError.h; sourceTree = "<group>"; };
 		75A01BE3D66B0AAE2AEA1286C8DDAD55 /* NSObject+pSwizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+pSwizzling.m"; path = "PoporFoundation/Classes/NSObject/NSObject+pSwizzling.m"; sourceTree = "<group>"; };
+		765D10B8CFA3D36E622FA367A96C2C04 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		76760B70ABAC5BA029B5ADE2AB7CCF29 /* PoporImageBrowerProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PoporImageBrowerProgressView.m; path = PoporImageBrower/Classes/PoporImageBrowerProgressView.m; sourceTree = "<group>"; };
 		76D0703942E167706E2E17E4D7E8A88F /* SDWebImageOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageOperation.m; path = SDWebImage/Core/SDWebImageOperation.m; sourceTree = "<group>"; };
 		770800C591115DF087827CD3048823DE /* PoporVideoTool-macOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "PoporVideoTool-macOS-Info.plist"; path = "../PoporVideoTool-macOS/PoporVideoTool-macOS-Info.plist"; sourceTree = "<group>"; };
@@ -1628,6 +1627,7 @@
 		DC4AE6B45D0251AB5AC3F5C4C2FF0E96 /* NSOrderedSet+RACSequenceAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSOrderedSet+RACSequenceAdditions.h"; path = "ReactiveObjC/NSOrderedSet+RACSequenceAdditions.h"; sourceTree = "<group>"; };
 		DD2EC1A8972001CFB9AA5F68262FE187 /* UIButton+RACCommandSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+RACCommandSupport.m"; path = "ReactiveObjC/UIButton+RACCommandSupport.m"; sourceTree = "<group>"; };
 		DDBC6C8A91B7B50E467BF2FDA62CB78B /* SDImageLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageLoader.m; path = SDWebImage/Core/SDImageLoader.m; sourceTree = "<group>"; };
+		DDD34CDAA34DCB7A4C5F1F35BB44A645 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DDDAECEE0C798B5B3C57A9261DE19F22 /* NSOrderedSet+RACSequenceAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSOrderedSet+RACSequenceAdditions.m"; path = "ReactiveObjC/NSOrderedSet+RACSequenceAdditions.m"; sourceTree = "<group>"; };
 		DE0B4AF04BAB7C2CBECB3466D1B8A219 /* UIDevice+pTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+pTool.h"; path = "PoporUI/Classes/UIDevice/UIDevice+pTool.h"; sourceTree = "<group>"; };
 		DE3A1B87C6EA829E0DB3017277630C59 /* PoporOrientation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PoporOrientation-dummy.m"; sourceTree = "<group>"; };
@@ -1852,15 +1852,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABE9E6C35C1467357227A6F2C8AE869E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65DD6807C4956F54E10D807C3BBDF4F9 /* AppKit.framework in Frameworks */,
-				1EB59A9874B01D521600687DA6A6AA9C /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B1673951267D988491BAFB958A732AC3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1893,6 +1884,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F73FB1EF16E792CF456E456E9D9044B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE9A8474ECE2ACA12A585058A5DDBD64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EC8BBA3B589CFF03FC8AB026A5924F5 /* Cocoa.framework in Frameworks */,
+				0C509F28E573AB7BA67EBC9D6CD782F5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2423,6 +2423,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		40D0E68C0FA9C8433ECABB4424B6C84A /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				765D10B8CFA3D36E622FA367A96C2C04 /* Cocoa.framework */,
+				DDD34CDAA34DCB7A4C5F1F35BB44A645 /* Foundation.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
 		43516801B76A947926671A056C18A80F /* TZImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2768,15 +2777,6 @@
 			path = PoporUI;
 			sourceTree = "<group>";
 		};
-		8ED48A3FEBD6D84448F3BD16BBAE5C76 /* OS X */ = {
-			isa = PBXGroup;
-			children = (
-				1673F2A25CA5E9CDB768424AC95BE52E /* AppKit.framework */,
-				45B0994DCDFE5E17782DE6D7D6A4FF08 /* Cocoa.framework */,
-			);
-			name = "OS X";
-			sourceTree = "<group>";
-		};
 		936EC40D936BA37B48B43CEE4F2E385B /* UIDevice */ = {
 			isa = PBXGroup;
 			children = (
@@ -3034,7 +3034,7 @@
 				C659DF63FA927FB41C792F831F6BACEC /* SKFCamera.framework */,
 				6D0FA943A05D822576BBE89CE74438C7 /* TZImagePickerController.framework */,
 				9E574F2932C7456073DB1ADD0AFD4C51 /* iOS */,
-				8ED48A3FEBD6D84448F3BD16BBAE5C76 /* OS X */,
+				40D0E68C0FA9C8433ECABB4424B6C84A /* OS X */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -4122,7 +4122,7 @@
 			buildPhases = (
 				0D9C2C1B79D48344770A14358DBA92B6 /* Headers */,
 				86ADB978CDE5106F8BF8F6D78BC21FE3 /* Sources */,
-				ABE9E6C35C1467357227A6F2C8AE869E /* Frameworks */,
+				DE9A8474ECE2ACA12A585058A5DDBD64 /* Frameworks */,
 				9851552F490D71911719BF43BC65FB86 /* Resources */,
 			);
 			buildRules = (
