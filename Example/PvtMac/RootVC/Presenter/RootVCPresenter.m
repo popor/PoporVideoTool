@@ -61,34 +61,47 @@ static CGFloat CellHeight = 24;
     NSTableCellView * cell   = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     VideoEntity     * entity = self.interactor.infoArray[row];
     
-    switch (tableColumn.identifier.integerValue) {
-        case RootTvCellTypeOrder: {
+    static NSArray * idArray;
+    if (!idArray) {
+        idArray = @[@"顺序", @"名称", @"分辨率", @"帧率", @"比特率",   @"容量", @"时间", ];
+    }
+    NSInteger index = [idArray indexOfObject:tableColumn.title];
+    
+    switch (index) {
+        case 0: {//@"顺序"
             cell.textField.stringValue = [NSString stringWithFormat:@"%li", row];
             
             return cell;
         }
-        case RootTvCellTypeTitle: {
+        case 1: {//@"名称"
             cell.textField.stringValue = entity.fileName;
             
             return cell;
         }
-        case RootTvCellTypeResolution: {
+        case 2: {//@"分辨率"
             cell.textField.stringValue = [NSString stringWithFormat:@"%lix%li", (long)entity.resolution.width, (long)entity.resolution.height];
             
             return cell;
         }
-        case RootTvCellTypeBitRate: {
+        case 3: {//@"帧率"
+            cell.textField.stringValue = [NSString stringWithFormat:@"%li", (long)entity.frameRate];
+            
+            return cell;
+        }
+        case 4: {//@"比特率"
             cell.textField.stringValue = [NSString stringWithFormat:@"%li", (long)entity.bitRate];
             
             return cell;
         }
-        case RootTvCellTypeSize: {
+            
+            
+        case 5: {//@"容量"
             cell.textField.stringValue = entity.sizeString;
             
             return cell;
         }
             
-        case RootTvCellTypeDuration: {
+        case 6: {//@"时间"
             cell.textField.stringValue = entity.durationString;
             
             return cell;
