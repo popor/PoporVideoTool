@@ -222,13 +222,22 @@ typedef void(^PoporVideoBlock_PFloat) (CGFloat progress);
 
 + (NSInteger)frameRateVideoUrl:(NSURL *)videoUrl;
 
+// 压缩时候, 应该判断一下, 防止变大.
 + (CGFloat)bitRateVideoUrl:(NSURL *)videoUrl;
 
 /**
  *  @param videoSize  压缩后视频宽度
- *  @param bitRate    默认为 900000, 这个决定视频容量的重要参数, 一般最大为6000000.
+ *  @param size_BitRate_scale 屏幕和bitRate的比例, 微信视频压缩大约是2.
  */
-+ (NSDictionary *)dicVideoSettingsSize:(CGSize)videoSize bitRate:(CGFloat)bitRate;
++ (NSDictionary *)dicVideoSettingsSize:(CGSize)videoSize
+                    size_BitRate_scale:(CGFloat)size_BitRate_scale;
+
+/**
+ *  @param videoSize  压缩后视频宽度
+ *  @param bitRate    比特率
+ */
++ (NSDictionary *)dicVideoSettingsSize:(CGSize)videoSize
+                               bitRate:(CGFloat)bitRate;
 
 + (NSDictionary *)dicAudioSettings;
 

@@ -508,12 +508,47 @@
     }
 }
 
++ (NSDictionary *)dicVideoSettingsSize:(CGSize)videoSize
+                    size_BitRate_scale:(CGFloat)size_BitRate_scale
+{
+    // 判断 size 和 bitRate的倍数
+    if (size_BitRate_scale <= 0) {
+        size_BitRate_scale = 2;
+    }
+    CGFloat bitRate = videoSize.width * videoSize.height * size_BitRate_scale;
+    
+    return [self dicVideoSettingsSize:videoSize bitRate:bitRate];
+}
 
-+ (NSDictionary *)dicVideoSettingsSize:(CGSize)videoSize bitRate:(CGFloat)bitRate {
-    if (bitRate <= 0) {
-        bitRate = 900000;
++ (NSDictionary *)dicVideoSettingsSize:(CGSize)videoSize
+                               bitRate:(CGFloat)bitRate
+{
+    if (videoSize.width <= 0 || videoSize.height <= 0) {
+        return nil;
     }
     
+    if (bitRate <= 0) {
+        bitRate = 900 * 1000;
+    }
+    
+    NSDictionary * dic = @{
+        AVVideoCodecKey : [self codeKey], //之前为 AVVideoCodecH264,
+        AVVideoWidthKey : @(videoSize.width),
+        AVVideoHeightKey: @(videoSize.height),
+        AVVideoCompressionPropertiesKey:
+            @{
+                AVVideoAverageBitRateKey : @(bitRate),
+                
+                //AVVideoProfileLevelKey   : AVVideoProfileLevelH264High40,// 这个值对AVVideoWidthKey和AVVideoHeightKey要求太苛刻.
+                AVVideoProfileLevelKey   : AVVideoProfileLevelH264HighAutoLevel,
+                
+                //AVVideoMaxKeyFrameIntervalKey: @(15), // 目前发现设置这个参数不起作用
+            },
+    };
+    return dic;
+}
+
++ (NSString *)codeKey {
     NSString * codeKey;
 #if TARGET_OS_OSX//mac
     codeKey = AVVideoCodecTypeH264;
@@ -532,19 +567,7 @@
     }
     
 #endif
-    
-    NSDictionary * dic = @{
-        AVVideoCodecKey : codeKey, //之前为 AVVideoCodecH264,
-        AVVideoWidthKey : @(videoSize.width),
-        AVVideoHeightKey: @(videoSize.height),
-        AVVideoCompressionPropertiesKey:
-            @{
-                AVVideoAverageBitRateKey: @(bitRate),
-                AVVideoProfileLevelKey  : AVVideoProfileLevelH264High40,
-            },
-    };
-    
-    return dic;
+    return codeKey;
 }
 
 + (NSDictionary *)dicAudioSettings {

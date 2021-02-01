@@ -47,6 +47,8 @@
         NSURL * outUrl     = [NSURL fileURLWithPath:outPath];
         
         self.playUrl       = outUrl;
+        
+        NSLog(@"🍀outPath: %@", self.playUrl);
     }
     [self addBt1];
 }
@@ -160,7 +162,6 @@
 - (void)compressVideoUrl:(NSURL *)videoOriginUrl {
     // 删除目标地址
     [NSFileManager deleteFile:self.playUrl.path];
-    NSLog(@"outPath: %@", self.playUrl);
     
     __block ProgressView_Popor * pv = ({
         ProgressView_Popor * pv = [ProgressView_Popor new];
@@ -202,9 +203,17 @@
     CGSize originSize   = [PoporVideoTool sizeVideoUrl:videoOriginUrl];
     CGSize targetSize   = [PoporVideoTool sizeFrom:originSize toSize:prioritySize];
     
+    // 测试其他size.
+    //targetSize = originSize;
+    //targetSize = CGSizeMake(originSize.width -1, originSize.height -1);
+    //targetSize = CGSizeMake(originSize.width *0.8, originSize.height *0.8);
+    //targetSize = CGSizeMake(originSize.width *1.2, originSize.height *1.2);
+    
     // 设置压缩配置
-    encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize bitRate:0]; // 视频参数
+    encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize size_BitRate_scale:2];// 视频参数
     encoder.audioSettings = [PoporVideoTool dicAudioSettings]; // 音频参数
+    
+    NSLog(@"🍀videoSettings: %@", encoder.videoSettings);
     
     // 异步压缩
     [encoder compressCompletion:^(PoporVideoTool * _Nonnull poporVideoTool) {
@@ -238,7 +247,7 @@
                 break;
             }
             default: {
-                NSLog(@"Video export failed with error: %@ (%li)", encoder.error.localizedDescription, encoder.error.code);
+                NSLog(@"Video export failed with error: %@ (%li)", encoder.error, encoder.error.code);
                 {   // 添加注释
                     [self.tvAtt addString:@"\n压缩失败: " font:self.tv.font color:UIColor.blackColor];
                     
@@ -283,7 +292,7 @@
     CGSize targetSize   = [PoporVideoTool sizeFrom:originSize toSize:prioritySize];
     
     // 设置压缩配置
-    encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize bitRate:0]; // 视频参数
+    encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize size_BitRate_scale:0]; // 视频参数
     encoder.audioSettings = [PoporVideoTool dicAudioSettings]; // 音频参数
     
     // 异步压缩
