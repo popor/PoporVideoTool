@@ -114,12 +114,12 @@
         make.bottom.mas_equalTo(-20);
         make.width.mas_greaterThanOrEqualTo(200);
     }];
-    [self.infoTV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(0);
-        make.left.mas_equalTo(0);
-        make.bottom.mas_equalTo(-0);
-        make.right.mas_equalTo(-0);
-    }];
+    //    [self.infoTV mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.top.mas_equalTo(0);
+    //        make.left.mas_equalTo(0);
+    //        make.bottom.mas_equalTo(-0);
+    //        make.right.mas_equalTo(-0);
+    //    }];
     
     [self.setBox mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(20);
@@ -156,13 +156,25 @@
     NSScrollView * sv = [[NSScrollView alloc] initWithFrame:CGRectZero];
     NSTableView  * tv = [[NSTableView alloc] initWithFrame:sv.bounds];
     tv.tag = 0;
-    tv.backgroundColor = NSColor.quaternaryLabelColor;
-    // scrubberTexturedBackgroundColor : 刷子, 线条颜色.
     
-    sv.layer.cornerRadius  = 6;
-    sv.layer.masksToBounds = YES;
+    sv.borderType = NSLineBorder; // 可以使得TV仅仅靠边
     
+    
+    //tv.backgroundColor = NSColor.yellowColor;
+    
+    //sv.backgroundColor = NSColor.controlBackgroundColor;
+    //sv.backgroundColor = NSColor.redColor;
     //tv.headerView.layer.backgroundColor = NSColor.redColor.CGColor;
+    
+    
+    //sv.layer.cornerRadius  = 6;
+    //sv.layer.masksToBounds = YES;
+    
+    // 设计圆角
+    [sv setWantsLayer:YES];
+    [sv.layer setCornerRadius:4];
+    [sv.contentView setWantsLayer:YES];
+    [sv.contentView.layer setCornerRadius:4.0f];
     
     NSArray * folderEntityArray = [self columeArray];
     for (int i=0; i<folderEntityArray.count; i++) {

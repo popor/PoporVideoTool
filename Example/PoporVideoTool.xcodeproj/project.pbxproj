@@ -193,12 +193,21 @@
 			name = other;
 			sourceTree = "<group>";
 		};
+		C3B7DA5C25C922B80054CCAD /* app */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDE9E525C5103500FAC920 /* AppDelegate.h */,
+				C3EDE9E625C5103500FAC920 /* AppDelegate.m */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
 		C3EDE9E425C5103500FAC920 /* PvtMac */ = {
 			isa = PBXGroup;
 			children = (
 				C3EDEA1725C5107C00FAC920 /* other */,
-				C3EDE9E525C5103500FAC920 /* AppDelegate.h */,
-				C3EDE9E625C5103500FAC920 /* AppDelegate.m */,
+				C3EDE9ED25C5103700FAC920 /* Main.storyboard */,
+				C3B7DA5C25C922B80054CCAD /* app */,
 				C3EDEBA325C5433400FAC920 /* RootVC */,
 			);
 			path = PvtMac;
@@ -226,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				C3EDE9EB25C5103700FAC920 /* Assets.xcassets */,
-				C3EDE9ED25C5103700FAC920 /* Main.storyboard */,
 				C3EDE9F025C5103700FAC920 /* Info.plist */,
 				C3EDE9F125C5103700FAC920 /* main.m */,
 				C3EDE9F325C5103700FAC920 /* PvtMac.entitlements */,

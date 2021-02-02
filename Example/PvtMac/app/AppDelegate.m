@@ -17,6 +17,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    [self keepAtFrontAction:NO];
 }
 
 
@@ -24,5 +25,13 @@
     // Insert code here to tear down your application
 }
 
+
+- (void)keepAtFrontAction:(BOOL)front {
+    if (front) {
+        [NSApp.windows[0] setLevel:NSNormalWindowLevel];
+    }else{
+        [NSApp.windows[0] setLevel:NSFloatingWindowLevel];
+    }
+}
 
 @end

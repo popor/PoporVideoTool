@@ -13,7 +13,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "PoporVideoTool.h"
 
-static CGFloat CellHeight = 24;
+static CGFloat CellHeight = 20;
 
 @interface RootVCPresenter ()
 
