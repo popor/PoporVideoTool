@@ -11,16 +11,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, RootTvCellType) {
-    RootTvCellTypeOrder = 1,
-    RootTvCellTypeTitle,
-    RootTvCellTypeResolution,// 分辨率
-    RootTvCellTypeBitRate,
-    RootTvCellTypeSize, // 容量
-    
-    RootTvCellTypeDuration,
+typedef NS_ENUM(NSInteger, TvIdType) {
+    TvIdType_Sort,
+    TvIdType_Title,
+    TvIdType_Resolution,
+    TvIdType_BitRate,
+    TvIdType_Size,
+    TvIdType_Time,
 };
 
+
+static NSString * TvIdSort       = @"顺序";
+static NSString * TvIdTitle      = @"名称";
+static NSString * TvIdResolution = @"分辨率";
+static NSString * TvIdBitRate    = @"比特率";
+static NSString * TvIdSize       = @"容量";
+static NSString * TvIdTime       = @"时间";
 
 // MARK: 对外接口
 @protocol RootVCProtocol <NSObject>
@@ -42,7 +48,7 @@ typedef NS_ENUM(NSInteger, RootTvCellType) {
 // MARK: UI事件
 @protocol RootVCEventHandler <NSObject>
 
-- (IBAction)addVideoAction:(id)sender;
+- (void)addVideoAction:(id)sender;
 
 @end
 

@@ -58,59 +58,55 @@ static CGFloat CellHeight = 24;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    NSTableCellView * cell   = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-    VideoEntity     * entity = self.interactor.infoArray[row];
+    EditableTextField * cellTF = (EditableTextField *)[tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     
-    static NSArray * idArray;
-    if (!idArray) {
-        idArray = @[@"顺序", @"名称", @"分辨率", @"帧率", @"比特率",   @"容量", @"时间", ];
+    if (!cellTF) {
+        cellTF = [self tableView:tableView cellTFForColumn:tableColumn row:row edit:NO initBlock:^(NSDictionary *dic) {
+            NSTextField * tf = dic[@"tf"];
+            tf.alignment = NSTextAlignmentLeft;
+        }];
     }
-    NSInteger index = [idArray indexOfObject:tableColumn.title];
     
-    switch (index) {
-        case 0: {//@"顺序"
-            cell.textField.stringValue = [NSString stringWithFormat:@"%li", row];
+    VideoEntity    * entity = self.interactor.infoArray[row];    
+    switch (tableColumn.identifier.integerValue) {
+        case TvIdType_Sort: {//@"顺序"
+            cellTF.stringValue = [NSString stringWithFormat:@"%li", row];
             
-            return cell;
+            return cellTF;
         }
-        case 1: {//@"名称"
-            cell.textField.stringValue = entity.fileName;
+        case TvIdType_Title: {//@"名称"
+            cellTF.stringValue = entity.fileName;
             
-            return cell;
+            return cellTF;
         }
-        case 2: {//@"分辨率"
-            cell.textField.stringValue = [NSString stringWithFormat:@"%lix%li", (long)entity.resolution.width, (long)entity.resolution.height];
+        case TvIdType_Resolution: {//@"分辨率"
+            cellTF.stringValue = [NSString stringWithFormat:@"%lix%li", (long)entity.resolution.width, (long)entity.resolution.height];
             
-            return cell;
+            return cellTF;
         }
-        case 3: {//@"帧率"
-            cell.textField.stringValue = [NSString stringWithFormat:@"%li", (long)entity.frameRate];
+        case TvIdType_BitRate: {//@"比特率"
+            cellTF.stringValue = [NSString stringWithFormat:@"%li", (long)entity.bitRate];
             
-            return cell;
-        }
-        case 4: {//@"比特率"
-            cell.textField.stringValue = [NSString stringWithFormat:@"%li", (long)entity.bitRate];
-            
-            return cell;
+            return cellTF;
         }
             
             
-        case 5: {//@"容量"
-            cell.textField.stringValue = entity.sizeString;
+        case TvIdType_Size: {//@"容量"
+            cellTF.stringValue = entity.sizeString;
             
-            return cell;
+            return cellTF;
         }
             
-        case 6: {//@"时间"
-            cell.textField.stringValue = entity.durationString;
+        case TvIdType_Time: {//@"时间"
+            cellTF.stringValue = entity.durationString;
             
-            return cell;
+            return cellTF;
         }
         default:
             break;
     }
 
-    return cell;
+    return cellTF;
 }
 
 - (EditableTextField *)tableView:(NSTableView *)tableView cellTFForColumn:(NSTableColumn *)tableColumn row:(NSInteger)row edit:(BOOL)edit initBlock:(BlockPDic)block {
@@ -185,7 +181,7 @@ static CGFloat CellHeight = 24;
     [panel setAllowsMultipleSelection:YES];
     [panel setCanChooseDirectories:NO];
     [panel setCanChooseFiles:YES];
-    [panel setAllowedFileTypes:@[@"mp4"]];
+    [panel setAllowedFileTypes:@[@"mp4", @"mov"]];
     
     [NSApp.windows[0] setLevel:NSNormalWindowLevel];
     

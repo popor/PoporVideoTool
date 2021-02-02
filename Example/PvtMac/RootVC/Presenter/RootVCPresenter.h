@@ -10,7 +10,7 @@
 
 // 处理和View事件
 @interface RootVCPresenter : NSObject <RootVCEventHandler, RootVCDataSource
-, NSTabViewDelegate, NSTableViewDataSource
+, NSTableViewDelegate, NSTableViewDataSource
 >
 
 - (void)setMyInteractor:(id)interactor;
