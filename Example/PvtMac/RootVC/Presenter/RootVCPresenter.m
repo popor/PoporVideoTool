@@ -178,10 +178,12 @@ static CGFloat CellHeight = 20;
 - (IBAction)addVideoAction:(id)sender {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     
-    [panel setAllowsMultipleSelection:YES];
-    [panel setCanChooseDirectories:NO];
-    [panel setCanChooseFiles:YES];
-    [panel setAllowedFileTypes:@[@"mp4", @"mov"]];
+    panel.allowsMultipleSelection = YES;
+    panel.canChooseDirectories    = NO;
+    panel.canChooseFiles          = YES;
+    panel.allowedFileTypes        = @[@"mp4", @"mov"];
+    
+    panel.canCreateDirectories    = YES; // 增加显示添加文件夹按钮
     
     [NSApp.windows[0] setLevel:NSNormalWindowLevel];
     
@@ -247,6 +249,71 @@ static CGFloat CellHeight = 20;
     }
 }
 
+- (void)compressVideoAction:(id)sender {
+    if (self.interactor.infoArray.count > 0) {
+        VideoEntity * entity = self.interactor.infoArray.firstObject;
+        NSURL * originUrl = [NSURL fileURLWithPath:entity.path];
+        
+        //NSString * outPutPath = [entity.path replaceWithREG:@"(\\.\\w{3,5})$" newString:@"_压缩$1"];
+        NSString * outPutPath = [entity.path substringToIndex:entity.path.length -entity.path.pathExtension.length -1];
+        outPutPath = [NSString stringWithFormat:@"%@_压缩.mp4", outPutPath];
+        NSURL * outPutUrl = [NSURL fileURLWithPath:outPutPath];
+        
+        NSLog(@"🍀 outPutUrl : %@", outPutUrl);
+        
+        [self compressVideoUrl:originUrl outPutUrl:outPutUrl];
+    }
+    
+}
+
+
+- (void)compressVideoUrl:(NSURL *)videoOriginUrl outPutUrl:(NSURL *)outPutUrl {
+    // 删除目标地址
+    // [NSFileManager deleteFile:self.playUrl.path];
+    
+    // 初始化 encoder
+    PoporVideoTool *encoder = [PoporVideoTool.alloc initWithAsset:[AVAsset assetWithURL:videoOriginUrl]];
+    encoder.outputFileType  = AVFileTypeMPEG4;
+    encoder.outputURL       = outPutUrl;
+    
+    // 获取压缩视频Size
+    CGSize prioritySize = CGSizeMake(540, 960);
+    CGSize originSize   = [PoporVideoTool sizeVideoUrl:videoOriginUrl];
+    CGSize targetSize   = [PoporVideoTool sizeFrom:originSize toSize:prioritySize];
+    
+    // 测试其他size.
+    //targetSize = originSize;
+    //targetSize = CGSizeMake(originSize.width -1, originSize.height -1);
+    //targetSize = CGSizeMake(originSize.width *0.8, originSize.height *0.8);
+    //targetSize = CGSizeMake(originSize.width *1.2, originSize.height *1.2);
+    
+    // 设置压缩配置
+    encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize size_BitRate_scale:2];// 视频参数
+    encoder.audioSettings = [PoporVideoTool dicAudioSettings]; // 音频参数
+    
+    //NSLog(@"🍀videoSettings: %@", encoder.videoSettings);
+    
+    // 异步压缩
+    [encoder compressCompletion:^(PoporVideoTool * _Nonnull poporVideoTool) {
+       
+        switch (poporVideoTool.status) {
+            case AVAssetExportSessionStatusCompleted: {
+                NSLog(@"Video export succeeded");
+                break;
+            }
+            case AVAssetExportSessionStatusCancelled: {
+                NSLog(@"Video export cancelled");
+                break;
+            }
+            default: {
+                NSLog(@"Video export failed with error: %@ (%li)", encoder.error, encoder.error.code);
+                break;
+            }
+        }
+    } progress:^(CGFloat progress) {
+        NSLogFloat(progress);
+    }];
+}
 
 #pragma mark - Interactor_EventHandler
 

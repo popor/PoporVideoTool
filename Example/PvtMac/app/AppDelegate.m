@@ -17,6 +17,14 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+#if TARGET_OS_MAC//模拟器
+    NSString * macOSInjectionPath = @"/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle";
+    if ([[NSFileManager defaultManager] fileExistsAtPath:macOSInjectionPath]) {
+        [[NSBundle bundleWithPath:macOSInjectionPath] load];
+    }
+#endif
+
+    
     [self keepAtFrontAction:NO];
 }
 

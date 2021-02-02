@@ -79,6 +79,8 @@
     
     self.setBox = ({
         NSBox * view = [NSBox new];
+        view.boxType = NSBoxCustom;
+        view.cornerRadius = 4;
         
         [self.view addSubview:view];
         view;
@@ -92,7 +94,7 @@
     });
     
     self.compressVideoBT = ({
-        NSButton * button = [NSButton buttonWithTitle:@"压缩" target:self action:@selector(addVideoAction:)];
+        NSButton * button = [NSButton buttonWithTitle:@"压缩" target:self.present action:@selector(compressVideoAction:)];
         [self.view addSubview:button];
         
         button;

@@ -49,6 +49,7 @@ static NSString * TvIdTime       = @"时间";
 @protocol RootVCEventHandler <NSObject>
 
 - (void)addVideoAction:(id)sender;
+- (void)compressVideoAction:(id)sender;
 
 @end
 
