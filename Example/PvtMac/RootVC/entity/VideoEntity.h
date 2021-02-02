@@ -10,6 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, VideoCompressType) {
+    VideoCompressTypeDefault,
+    VideoCompressTypeSuccess,
+    VideoCompressTypeFail,
+};
+
+
 @interface VideoEntity : NSObject
 @property (nonatomic, copy  ) NSString * path;
 @property (nonatomic, copy  ) NSString * fileName;
@@ -23,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic        ) NSInteger  frameRate;
 @property (nonatomic        ) CGFloat    bitRate;
+
+@property (nonatomic        ) VideoCompressType compressType;
 
 @end
 

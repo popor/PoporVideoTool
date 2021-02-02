@@ -8,6 +8,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import "EditableTextField.h"
+#import "NSView_prefix.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -35,6 +36,21 @@ static NSString * TvIdTime       = @"时间";
 - (NSTableView *)videoTV;
 
 // MARK: 自己的
+@property (nonatomic, strong) NSButton    * outputFolderBT;
+@property (nonatomic, strong) NSTextField * outputFolderTF;
+
+@property (nonatomic, strong) NSTextField * outputSizeL;
+@property (nonatomic, strong) NSTextField * outputWidthTF;
+@property (nonatomic, strong) NSTextField * outputHeightTF;
+
+@property (nonatomic, strong) NSTextField * outputBitL;
+@property (nonatomic, strong) NSTextField * outputBitScaleTF;
+@property (nonatomic, strong) NSTextField * outputBitRateTF;
+
+
+@property (nonatomic, strong) NSButton     * addVideoBT;
+@property (nonatomic, strong) NSButton     * compressVideoBT;
+
 
 // MARK: 外部注入的
 
@@ -49,7 +65,9 @@ static NSString * TvIdTime       = @"时间";
 @protocol RootVCEventHandler <NSObject>
 
 - (void)addVideoAction:(id)sender;
-- (void)compressVideoAction:(id)sender;
+- (void)compressVideoAction:(NSButton * _Nullable)sender;
+
+- (void)outputFolderAction:(id)sender;
 
 @end
 

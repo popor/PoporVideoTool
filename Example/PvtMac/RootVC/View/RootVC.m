@@ -19,7 +19,17 @@
 @end
 
 @implementation RootVC
+@synthesize outputFolderBT;
+@synthesize outputFolderTF;
+@synthesize outputSizeL;
+@synthesize outputWidthTF;
+@synthesize outputHeightTF;
+@synthesize outputBitL;
+@synthesize outputBitScaleTF;
+@synthesize outputBitRateTF;
 
+@synthesize addVideoBT;
+@synthesize compressVideoBT;
 
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
@@ -69,22 +79,8 @@
 }
 
 - (void)addViews {
-    @weakify(self);
-    [self addTagTVs:^(NSScrollView *sv, NSTableView *tv) {
-        @strongify(self);
-        
-        self.infoSV = sv;
-        self.infoTV = tv;
-    }];
-    
-    self.setBox = ({
-        NSBox * view = [NSBox new];
-        view.boxType = NSBoxCustom;
-        view.cornerRadius = 4;
-        
-        [self.view addSubview:view];
-        view;
-    });
+   
+   
     
     self.addVideoBT = ({
         NSButton * button = [NSButton buttonWithTitle:@"添加文件" target:self action:@selector(addVideoAction:)];
@@ -100,8 +96,61 @@
         button;
     });
     
+    [self addTvs];
+    [self addBoxs];
+    
     [self updateMasonry];
     
+}
+
+- (void)addTvs {
+    @weakify(self);
+    [self addTagTVs:^(NSScrollView *sv, NSTableView *tv) {
+        @strongify(self);
+        
+        self.infoSV = sv;
+        self.infoTV = tv;
+    }];
+    
+    
+    self.outputFolderBT = ({
+        NSButton * button = [NSButton buttonWithTitle:@"保存文件件" target:self.present action:@selector(outputFolderAction:)];
+        [self.view addSubview:button];
+        
+        button;
+    });
+    
+    self.outputFolderTF = ({
+        EditableTextField * tf = [[EditableTextField alloc] init];
+        tf.editable = NO;
+        tf.selectable = YES;
+        [self.view addSubview:tf];
+        
+        tf;
+    });
+    
+    //....................................................................................
+    [self.infoSV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(20);
+        make.left.mas_equalTo(20);
+        //make.bottom.mas_equalTo(-20);
+        make.width.mas_greaterThanOrEqualTo(200);
+        make.height.mas_greaterThanOrEqualTo(100);
+    }];
+    
+    [self.outputFolderBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.infoSV.mas_bottom).mas_offset(10);
+        make.left.mas_equalTo(20);
+        make.size.mas_equalTo(CGSizeMake(80, 24));
+        make.bottom.mas_equalTo(-20);
+    }];
+    
+    [self.outputFolderTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.outputFolderBT);
+        make.left.mas_equalTo(self.outputFolderBT.mas_right).mas_offset(10);
+        make.height.mas_equalTo(self.outputFolderBT);
+        make.right.mas_equalTo(self.infoSV);
+    }];
 }
 
 - (void)updateMasonry {
@@ -110,27 +159,6 @@
     [self.view addSubview:self.addVideoBT];
     [self.view addSubview:self.compressVideoBT];
     
-    [self.infoSV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(20);
-        make.left.mas_equalTo(20);
-        make.bottom.mas_equalTo(-20);
-        make.width.mas_greaterThanOrEqualTo(200);
-    }];
-    //    [self.infoTV mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.top.mas_equalTo(0);
-    //        make.left.mas_equalTo(0);
-    //        make.bottom.mas_equalTo(-0);
-    //        make.right.mas_equalTo(-0);
-    //    }];
-    
-    [self.setBox mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(20);
-        make.left.mas_equalTo(self.infoSV.mas_right).mas_offset(20);
-        //make.bottom.mas_equalTo(-20);
-        make.width.mas_equalTo(281);
-        make.height.mas_equalTo(114);
-        make.right.mas_equalTo(-20);
-    }];
     
     [self.addVideoBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.setBox.mas_bottom).mas_offset(20);
@@ -228,6 +256,29 @@
         [array addObject:column];
     }
     return array;
+}
+
+- (void)addBoxs {
+ 
+    self.setBox = ({
+        NSBox * view = [NSBox new];
+        view.boxType = NSBoxCustom;
+        view.cornerRadius = 4;
+        
+        [self.view addSubview:view];
+        view;
+    });
+    
+    [self.setBox mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(20);
+        make.left.mas_equalTo(self.infoSV.mas_right).mas_offset(20);
+        //make.bottom.mas_equalTo(-20);
+        make.width.mas_equalTo(281);
+        make.height.mas_equalTo(114);
+        make.right.mas_equalTo(-20);
+    }];
+    
+   
 }
 
 // 开始执行事件,比如获取网络数据

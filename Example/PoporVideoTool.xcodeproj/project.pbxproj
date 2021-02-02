@@ -17,6 +17,9 @@
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		C3B7DAEA25C942460054CCAD /* NSBundle+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE225C942460054CCAD /* NSBundle+Tool.m */; };
+		C3B7DAEB25C942460054CCAD /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE525C942460054CCAD /* iToast.m */; };
+		C3B7DAEC25C942460054CCAD /* NSTask+shell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE825C942460054CCAD /* NSTask+shell.m */; };
 		C3EDE9E725C5103500FAC920 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDE9E625C5103500FAC920 /* AppDelegate.m */; };
 		C3EDE9EC25C5103700FAC920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3EDE9EB25C5103700FAC920 /* Assets.xcassets */; };
 		C3EDE9EF25C5103700FAC920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3EDE9ED25C5103700FAC920 /* Main.storyboard */; };
@@ -54,6 +57,13 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A92DF0BC48E3127F3D66C522 /* Pods-PoporVideoTool_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporVideoTool_Example.debug.xcconfig"; path = "Target Support Files/Pods-PoporVideoTool_Example/Pods-PoporVideoTool_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B0FDF8986B256FAC11DAF536 /* Pods-PvtMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PvtMac.release.xcconfig"; path = "Target Support Files/Pods-PvtMac/Pods-PvtMac.release.xcconfig"; sourceTree = "<group>"; };
+		C3B7DAE125C942460054CCAD /* NSBundle+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Tool.h"; sourceTree = "<group>"; };
+		C3B7DAE225C942460054CCAD /* NSBundle+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Tool.m"; sourceTree = "<group>"; };
+		C3B7DAE425C942460054CCAD /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
+		C3B7DAE525C942460054CCAD /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
+		C3B7DAE725C942460054CCAD /* NSTask+shell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+shell.h"; sourceTree = "<group>"; };
+		C3B7DAE825C942460054CCAD /* NSTask+shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+shell.m"; sourceTree = "<group>"; };
+		C3B7DAE925C942460054CCAD /* NSView_prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSView_prefix.h; sourceTree = "<group>"; };
 		C3EDE95325C50E8400FAC920 /* PoporVideoTool_Example copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PoporVideoTool_Example copy-Info.plist"; path = "/Users/popor/Documents/wkq/GitHubSDK/PoporVideoTool/Example/PoporVideoTool_Example copy-Info.plist"; sourceTree = "<absolute>"; };
 		C3EDE9E325C5103500FAC920 /* PvtMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PvtMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EDE9E525C5103500FAC920 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -202,9 +212,56 @@
 			path = app;
 			sourceTree = "<group>";
 		};
+		C3B7DADE25C942460054CCAD /* public */ = {
+			isa = PBXGroup;
+			children = (
+				C3B7DADF25C942460054CCAD /* NSView */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+		C3B7DADF25C942460054CCAD /* NSView */ = {
+			isa = PBXGroup;
+			children = (
+				C3B7DAE925C942460054CCAD /* NSView_prefix.h */,
+				C3B7DAE025C942460054CCAD /* NSBundle */,
+				C3B7DAE325C942460054CCAD /* iToast */,
+				C3B7DAE625C942460054CCAD /* NSTask_shell */,
+			);
+			path = NSView;
+			sourceTree = "<group>";
+		};
+		C3B7DAE025C942460054CCAD /* NSBundle */ = {
+			isa = PBXGroup;
+			children = (
+				C3B7DAE125C942460054CCAD /* NSBundle+Tool.h */,
+				C3B7DAE225C942460054CCAD /* NSBundle+Tool.m */,
+			);
+			path = NSBundle;
+			sourceTree = "<group>";
+		};
+		C3B7DAE325C942460054CCAD /* iToast */ = {
+			isa = PBXGroup;
+			children = (
+				C3B7DAE425C942460054CCAD /* iToast.h */,
+				C3B7DAE525C942460054CCAD /* iToast.m */,
+			);
+			path = iToast;
+			sourceTree = "<group>";
+		};
+		C3B7DAE625C942460054CCAD /* NSTask_shell */ = {
+			isa = PBXGroup;
+			children = (
+				C3B7DAE725C942460054CCAD /* NSTask+shell.h */,
+				C3B7DAE825C942460054CCAD /* NSTask+shell.m */,
+			);
+			path = NSTask_shell;
+			sourceTree = "<group>";
+		};
 		C3EDE9E425C5103500FAC920 /* PvtMac */ = {
 			isa = PBXGroup;
 			children = (
+				C3B7DADE25C942460054CCAD /* public */,
 				C3EDEA1725C5107C00FAC920 /* other */,
 				C3EDE9ED25C5103700FAC920 /* Main.storyboard */,
 				C3B7DA5C25C922B80054CCAD /* app */,
@@ -545,12 +602,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B7DAEB25C942460054CCAD /* iToast.m in Sources */,
 				C3EDEBB825C5435D00FAC920 /* RootVC.m in Sources */,
 				C3EDE9F225C5103700FAC920 /* main.m in Sources */,
 				C3EDEBDC25C54FAC00FAC920 /* VideoEntity.m in Sources */,
+				C3B7DAEC25C942460054CCAD /* NSTask+shell.m in Sources */,
 				C3EDE9E725C5103500FAC920 /* AppDelegate.m in Sources */,
 				C3EDEBB925C5435D00FAC920 /* RootVCInteractor.m in Sources */,
 				C3EDEBBA25C5435D00FAC920 /* RootVCPresenter.m in Sources */,
+				C3B7DAEA25C942460054CCAD /* NSBundle+Tool.m in Sources */,
 				C3EDEBF125C5563D00FAC920 /* EditableTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,8 +26,6 @@
 @property (nonatomic, strong) NSScrollView * infoSV;
 @property (nonatomic, strong) NSTableView  * infoTV;
 @property (nonatomic, strong) NSBox        * setBox;
-@property (nonatomic, strong) NSButton     * addVideoBT;
-@property (nonatomic, strong) NSButton     * compressVideoBT;
 
 - (IBAction)addVideoAction:(id)sender;
 

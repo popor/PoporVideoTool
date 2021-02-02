@@ -14,6 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RootVCInteractor : NSObject
 
 @property (nonatomic, strong) NSMutableArray * infoArray;
+@property (nonatomic, copy  ) NSString       * outputFolderPath;
+
+//@property (nonatomic, copy  ) NSArray        * 
+
+- (void)save__outputFolderPath:(NSString *)__outputFolderPath;
+- (NSString *)get__outputFolderPath;
 
 @end
 

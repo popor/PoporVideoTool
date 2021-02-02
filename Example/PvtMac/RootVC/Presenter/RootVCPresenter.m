@@ -43,7 +43,7 @@ static CGFloat CellHeight = 20;
 
 // 开始执行事件,比如获取网络数据
 - (void)startEvent {
-    
+    self.view.outputFolderTF.stringValue = self.interactor.outputFolderPath;
     
 }
 
@@ -218,6 +218,8 @@ static CGFloat CellHeight = 20;
     entity.bitRate = [PoporVideoTool bitRateVideoUrl:url];
     entity.frameRate = [PoporVideoTool frameRateVideoUrl:url];
     
+    entity.compressType = VideoCompressTypeDefault;
+    
     [self.interactor.infoArray addObject:entity];
 }
 
@@ -249,25 +251,56 @@ static CGFloat CellHeight = 20;
     }
 }
 
-- (void)compressVideoAction:(id)sender {
+- (void)compressVideoAction:(NSButton * _Nullable)sender {
     if (self.interactor.infoArray.count > 0) {
-        VideoEntity * entity = self.interactor.infoArray.firstObject;
-        NSURL * originUrl = [NSURL fileURLWithPath:entity.path];
+        BOOL isFind = NO;
+        for (VideoEntity * entity in self.interactor.infoArray) {
+            if (entity.compressType == VideoCompressTypeFail) {
+                continue;
+            }
+            
+            /*
+             //NSString * outPutPath = [entity.path replaceWithREG:@"(\\.\\w{3,5})$" newString:@"_压缩$1"];
+             
+             //NSString * outPutPath = [entity.path substringToIndex:entity.path.length -entity.path.pathExtension.length -1];
+             //outPutPath = [NSString stringWithFormat:@"%@_压缩.mp4", outPutPath];
+             */
+            
+            NSURL * originUrl = [NSURL fileURLWithPath:entity.path];
+            if (!self.interactor.outputFolderPath) {
+                AlertToastTitle(@"请设置输出文件夹", self.view.vc.view);
+                return;
+            } else {
+                NSString * outPutPath = entity.path.lastPathComponent;
+                outPutPath = [outPutPath substringToIndex:outPutPath.length -outPutPath.pathExtension.length -1];
+                outPutPath = [NSString stringWithFormat:@"%@/wkq%@_压缩.mp4", self.interactor.outputFolderPath, outPutPath];
+                if ([NSFileManager isFileExist:outPutPath]) {
+                    continue;
+                } else {
+                    NSURL * outPutUrl = [NSURL fileURLWithPath:outPutPath];
+                    NSLog(@"🍀 outPutUrl : %@", outPutUrl);
+                    [self compressVideoUrl:originUrl outPutUrl:outPutUrl entity:entity];
+                    isFind = YES;
+                    break;
+                }
+            }
+            
+        }
+        if (isFind) {
+            self.view.compressVideoBT.state = NSControlStateValueOn;
+        } else {
+            self.view.compressVideoBT.state = NSControlStateValueOff;
+            AlertToastTitleTimeTextColorBgColor(@"视频压缩完成", 3, self.view.vc.view, NSColor.whiteColor, NSColor.redColor);
+        }
         
-        //NSString * outPutPath = [entity.path replaceWithREG:@"(\\.\\w{3,5})$" newString:@"_压缩$1"];
-        NSString * outPutPath = [entity.path substringToIndex:entity.path.length -entity.path.pathExtension.length -1];
-        outPutPath = [NSString stringWithFormat:@"%@_压缩.mp4", outPutPath];
-        NSURL * outPutUrl = [NSURL fileURLWithPath:outPutPath];
-        
-        NSLog(@"🍀 outPutUrl : %@", outPutUrl);
-        
-        [self compressVideoUrl:originUrl outPutUrl:outPutUrl];
+    } else {
+        AlertToastTitle(@"请添加压缩视频", self.view.vc.view);
+        self.view.compressVideoBT.state = NSControlStateValueOff;
     }
-    
 }
 
 
-- (void)compressVideoUrl:(NSURL *)videoOriginUrl outPutUrl:(NSURL *)outPutUrl {
+- (void)compressVideoUrl:(NSURL *)videoOriginUrl outPutUrl:(NSURL *)outPutUrl entity:(VideoEntity *)entity {
     // 删除目标地址
     // [NSFileManager deleteFile:self.playUrl.path];
     
@@ -299,22 +332,55 @@ static CGFloat CellHeight = 20;
         switch (poporVideoTool.status) {
             case AVAssetExportSessionStatusCompleted: {
                 NSLog(@"Video export succeeded");
+                entity.compressType = VideoCompressTypeSuccess;
                 break;
             }
             case AVAssetExportSessionStatusCancelled: {
                 NSLog(@"Video export cancelled");
+                entity.compressType = VideoCompressTypeFail;
                 break;
             }
             default: {
+                entity.compressType = VideoCompressTypeFail;
                 NSLog(@"Video export failed with error: %@ (%li)", encoder.error, encoder.error.code);
                 break;
             }
         }
+        
+        if (self.view.compressVideoBT.state == NSControlStateValueOn) {
+            [self compressVideoAction:nil];
+        }
+        
     } progress:^(CGFloat progress) {
         NSLogFloat(progress);
     }];
 }
 
+
+- (void)outputFolderAction:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    
+    panel.allowsMultipleSelection = NO;
+    panel.canChooseDirectories    = YES;
+    panel.canChooseFiles          = NO;
+    //panel.allowedFileTypes        = @[@"mp4", @"mov"];
+    
+    panel.canCreateDirectories    = YES; // 增加显示添加文件夹按钮
+    
+    [NSApp.windows[0] setLevel:NSNormalWindowLevel];
+    
+    if ([panel runModal] == NSModalResponseOK) {
+        
+        if (panel.URLs.count > 0) {
+            NSString * path = [panel.URLs.firstObject path];
+            
+            [self.interactor save__outputFolderPath:path];            
+            self.interactor.outputFolderPath     = path;
+            self.view.outputFolderTF.stringValue = path;
+        }
+        
+    }
+}
 #pragma mark - Interactor_EventHandler
 
 @end
