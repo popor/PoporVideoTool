@@ -20,6 +20,7 @@
 		C3B7DAEA25C942460054CCAD /* NSBundle+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE225C942460054CCAD /* NSBundle+Tool.m */; };
 		C3B7DAEB25C942460054CCAD /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE525C942460054CCAD /* iToast.m */; };
 		C3B7DAEC25C942460054CCAD /* NSTask+shell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE825C942460054CCAD /* NSTask+shell.m */; };
+		C3B7DAF625C951450054CCAD /* NSFont+pSize.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAF525C951450054CCAD /* NSFont+pSize.m */; };
 		C3EDE9E725C5103500FAC920 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EDE9E625C5103500FAC920 /* AppDelegate.m */; };
 		C3EDE9EC25C5103700FAC920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3EDE9EB25C5103700FAC920 /* Assets.xcassets */; };
 		C3EDE9EF25C5103700FAC920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3EDE9ED25C5103700FAC920 /* Main.storyboard */; };
@@ -64,6 +65,9 @@
 		C3B7DAE725C942460054CCAD /* NSTask+shell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+shell.h"; sourceTree = "<group>"; };
 		C3B7DAE825C942460054CCAD /* NSTask+shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+shell.m"; sourceTree = "<group>"; };
 		C3B7DAE925C942460054CCAD /* NSView_prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSView_prefix.h; sourceTree = "<group>"; };
+		C3B7DAF425C951450054CCAD /* NSFont+pSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFont+pSize.h"; sourceTree = "<group>"; };
+		C3B7DAF525C951450054CCAD /* NSFont+pSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFont+pSize.m"; sourceTree = "<group>"; };
+		C3B7DAFB25C951510054CCAD /* PoporNS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PoporNS.h; path = Font/PoporNS.h; sourceTree = "<group>"; };
 		C3EDE95325C50E8400FAC920 /* PoporVideoTool_Example copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PoporVideoTool_Example copy-Info.plist"; path = "/Users/popor/Documents/wkq/GitHubSDK/PoporVideoTool/Example/PoporVideoTool_Example copy-Info.plist"; sourceTree = "<absolute>"; };
 		C3EDE9E325C5103500FAC920 /* PvtMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PvtMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EDE9E525C5103500FAC920 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		C3B7DADE25C942460054CCAD /* public */ = {
 			isa = PBXGroup;
 			children = (
+				C3B7DAF225C951010054CCAD /* PoporNS */,
 				C3B7DADF25C942460054CCAD /* NSView */,
 			);
 			path = public;
@@ -256,6 +261,24 @@
 				C3B7DAE825C942460054CCAD /* NSTask+shell.m */,
 			);
 			path = NSTask_shell;
+			sourceTree = "<group>";
+		};
+		C3B7DAF225C951010054CCAD /* PoporNS */ = {
+			isa = PBXGroup;
+			children = (
+				C3B7DAFB25C951510054CCAD /* PoporNS.h */,
+				C3B7DAF325C951250054CCAD /* Font */,
+			);
+			path = PoporNS;
+			sourceTree = "<group>";
+		};
+		C3B7DAF325C951250054CCAD /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				C3B7DAF425C951450054CCAD /* NSFont+pSize.h */,
+				C3B7DAF525C951450054CCAD /* NSFont+pSize.m */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		C3EDE9E425C5103500FAC920 /* PvtMac */ = {
@@ -607,6 +630,7 @@
 				C3EDE9F225C5103700FAC920 /* main.m in Sources */,
 				C3EDEBDC25C54FAC00FAC920 /* VideoEntity.m in Sources */,
 				C3B7DAEC25C942460054CCAD /* NSTask+shell.m in Sources */,
+				C3B7DAF625C951450054CCAD /* NSFont+pSize.m in Sources */,
 				C3EDE9E725C5103500FAC920 /* AppDelegate.m in Sources */,
 				C3EDEBB925C5435D00FAC920 /* RootVCInteractor.m in Sources */,
 				C3EDEBBA25C5435D00FAC920 /* RootVCPresenter.m in Sources */,

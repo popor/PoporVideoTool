@@ -11,6 +11,7 @@
 
 #import <Masonry/Masonry.h>
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "PoporNS.h"
 
 @interface RootVC ()
 
@@ -21,9 +22,14 @@
 @implementation RootVC
 @synthesize outputFolderBT;
 @synthesize outputFolderTF;
-@synthesize outputSizeL;
+
+@synthesize outputOriginSizeBT;
+
+@synthesize outputSizeBT;
 @synthesize outputWidthTF;
 @synthesize outputHeightTF;
+
+
 @synthesize outputBitL;
 @synthesize outputBitScaleTF;
 @synthesize outputBitRateTF;
@@ -276,6 +282,71 @@
         make.width.mas_equalTo(281);
         make.height.mas_equalTo(114);
         make.right.mas_equalTo(-20);
+    }];
+    
+    self.outputOriginSizeBT = ({
+        NSButton * button = [NSButton radioButtonWithTitle:@"原始分辨率" target:self.present action:@selector(outputSizeAction:)];
+        button.state = NSControlStateValueOn;
+        
+        [self.setBox addSubview:button];
+        
+        button;
+    });
+    
+    self.outputSizeBT = ({
+        NSButton * button = [NSButton radioButtonWithTitle:@"固定分辨率" target:self.present action:@selector(outputSizeAction:)];
+        [self.setBox addSubview:button];
+        
+        button;
+    });
+    
+    self.outputWidthTF = ({
+        EditableTextField * tf = [[EditableTextField alloc] init];
+        tf.editable    = YES;
+        tf.selectable  = YES;
+        tf.stringValue = @"540";
+        [self.setBox addSubview:tf];
+        
+        tf;
+    });
+    self.outputHeightTF = ({
+        EditableTextField * tf = [[EditableTextField alloc] init];
+        tf.editable    = YES;
+        tf.selectable  = YES;
+        tf.stringValue = @"960";
+        [self.setBox addSubview:tf];
+        
+        tf;
+    });
+    
+    CGFloat LHeight = 20;
+    //....................................................................................
+    [self.outputOriginSizeBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(10);
+        make.left.mas_equalTo(5);
+        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(20);
+        //make.height.mas_equalTo(self.outputSizeBT.font.lineHeight);
+    }];
+    
+    [self.outputSizeBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.outputWidthTF);
+        make.left.mas_equalTo(5);
+        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(20);
+        //make.height.mas_equalTo(self.outputSizeBT.font.lineHeight);
+    }];
+    [self.outputWidthTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.outputOriginSizeBT.mas_bottom).mas_offset(5);
+        make.left.mas_equalTo(self.outputSizeBT.mas_right).mas_offset(10);
+        make.height.mas_equalTo(LHeight);
+    }];
+    [self.outputHeightTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.outputWidthTF);
+        make.left.mas_equalTo(self.outputWidthTF.mas_right).mas_offset(10);
+        make.width.mas_equalTo(self.outputWidthTF);
+        make.right.mas_equalTo(-5);
+        make.height.mas_equalTo(LHeight);
     }];
     
    

@@ -39,7 +39,9 @@ static NSString * TvIdTime       = @"时间";
 @property (nonatomic, strong) NSButton    * outputFolderBT;
 @property (nonatomic, strong) NSTextField * outputFolderTF;
 
-@property (nonatomic, strong) NSTextField * outputSizeL;
+@property (nonatomic, strong) NSButton    * outputOriginSizeBT;
+
+@property (nonatomic, strong) NSButton    * outputSizeBT;
 @property (nonatomic, strong) NSTextField * outputWidthTF;
 @property (nonatomic, strong) NSTextField * outputHeightTF;
 
@@ -68,6 +70,8 @@ static NSString * TvIdTime       = @"时间";
 - (void)compressVideoAction:(NSButton * _Nullable)sender;
 
 - (void)outputFolderAction:(id)sender;
+
+- (void)outputSizeAction:(NSButton *)bt;
 
 @end
 

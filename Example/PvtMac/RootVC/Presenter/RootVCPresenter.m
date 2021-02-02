@@ -381,6 +381,15 @@ static CGFloat CellHeight = 20;
         
     }
 }
+
+- (void)outputSizeAction:(NSButton *)bt {
+    bt.state = NSControlStateValueOn;
+    if (bt != self.view.outputOriginSizeBT) {
+        self.view.outputOriginSizeBT.state = NSControlStateValueOff;
+    } else {
+        self.view.outputSizeBT.state = NSControlStateValueOff;
+    }
+}
 #pragma mark - Interactor_EventHandler
 
 @end
