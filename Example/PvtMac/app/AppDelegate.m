@@ -35,6 +35,8 @@
     NSButton * closeButton  = [window standardWindowButton:NSWindowCloseButton];
     NSView   * titleBarView = closeButton.superview;
     
+    self.window = window;
+    
     self.frontBT = ({
         NSButton * button = [NSButton checkboxWithTitle:@"置顶" target:self action:@selector(keepAtFrontAction:)];
         
@@ -130,6 +132,16 @@
         NSString     * title = dic[@"title"];
         window.title = title;
     }];
+}
+
+// 当点击了关闭window,再次点击Dock上的icon时候,执行以下代码可以再次显示window.
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag{
+    if (flag) {
+        return NO;
+    } else{
+        [self.window makeKeyAndOrderFront:self];
+        return YES;
+    }
 }
 
 @end

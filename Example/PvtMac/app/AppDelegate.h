@@ -10,6 +10,7 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (nonatomic, weak  ) NSWindow * window;
 
 // IB事件, 没有sender参数的话, 很可能看不到.
 - (IBAction)deleteVideoAction:(id)sender;
