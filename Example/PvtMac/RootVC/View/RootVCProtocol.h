@@ -37,6 +37,11 @@ static NSString * TvIdTime       = @"时间";
 - (NSTableView *)videoTV;
 
 // MARK: 自己的
+@property (nonatomic, strong) NSScrollView * infoSV;
+@property (nonatomic, strong) NSTableView  * infoTV;
+@property (nonatomic, strong) NSBox        * setBox;
+
+
 @property (nonatomic, strong) NSButton    * outputFolderBT;
 @property (nonatomic, strong) NSTextField * outputFolderTF;
 
@@ -79,6 +84,8 @@ static NSString * TvIdTime       = @"时间";
 - (void)outputBitAction:(NSButton *)bt;
 
 - (void)addVideoPath:(NSString *)path;
+
+- (void)deleteVideoAction;
 
 @end
 

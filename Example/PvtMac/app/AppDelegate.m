@@ -115,5 +115,9 @@
     return info;
 }
 
+#pragma mark - IBAction
+- (IBAction)deleteVideoAction:(id)sender {
+    [MGJRouter openURL:MUrl_keyboard_deleteVideo];
+}
 
 @end

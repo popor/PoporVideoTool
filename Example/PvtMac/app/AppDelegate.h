@@ -11,5 +11,8 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 
+// IB事件, 没有sender参数的话, 很可能看不到.
+- (IBAction)deleteVideoAction:(id)sender;
+
 @end
 

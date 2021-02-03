@@ -10,8 +10,10 @@
 
 @implementation MRouterUrlPrefix
 
-NSString * const MUrl_updateKeepFrontStatus    = @"MUrl_updateKeepFrontStatus";
-NSString * const MUrl_updateKeepFrontStatusOn  = @"MUrl_updateKeepFrontStatusOn";
-NSString * const MUrl_updateKeepFrontStatusOff = @"MUrl_updateKeepFrontStatusOff";
+NSString * const MUrl_updateKeepFrontStatus    = @"updateKeepFrontStatus";
+NSString * const MUrl_updateKeepFrontStatusOn  = @"updateKeepFrontStatusOn";
+NSString * const MUrl_updateKeepFrontStatusOff = @"updateKeepFrontStatusOff";
+
+NSString * const MUrl_keyboard_deleteVideo     = @"keyboard_deleteVideo";
 
 @end

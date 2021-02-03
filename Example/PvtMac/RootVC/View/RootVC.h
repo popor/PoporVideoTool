@@ -17,16 +17,6 @@
 // 开始执行事件,比如获取网络数据
 - (void)startEvent;
 
-//@property (nonatomic, strong) IBOutlet NSScrollView * infoSV;
-//@property (nonatomic, strong) IBOutlet NSTableView  * infoTV;
-//@property (nonatomic, strong) IBOutlet NSBox        * setBox;
-//@property (nonatomic, strong) IBOutlet NSButton     * addVideoBT;
-//@property (nonatomic, strong) IBOutlet NSButton     * compressVideoBT;
-
-@property (nonatomic, strong) NSScrollView * infoSV;
-@property (nonatomic, strong) NSTableView  * infoTV;
-@property (nonatomic, strong) NSBox        * setBox;
-
 - (IBAction)addVideoAction:(id)sender;
 
 @end

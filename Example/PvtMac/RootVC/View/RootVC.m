@@ -20,6 +20,10 @@
 @end
 
 @implementation RootVC
+@synthesize infoSV;
+@synthesize infoTV;
+@synthesize setBox;
+
 @synthesize outputFolderBT;
 @synthesize outputFolderTF;
 
@@ -116,7 +120,6 @@
     [self addBoxs];
     
     [self updateMasonry];
-    
 }
 
 - (void)addDragViews {
@@ -476,6 +479,17 @@
 // 开始执行事件,比如获取网络数据
 - (void)startEvent {
     [self.present startEvent];
+    
+    [self addNcEvent];
+}
+
+- (void)addNcEvent {
+    @weakify(self);
+    [MRouterConfig registerURL:MUrl_keyboard_deleteVideo toHandel:^(NSDictionary *routerParameters) {
+        @strongify(self);
+        [self.present deleteVideoAction];
+    }];
+    
     
 }
 

@@ -423,6 +423,25 @@ static CGFloat CellHeight = 20;
     }
 }
 
+- (void)deleteVideoAction {
+    if (self.interactor.infoArray.count > 0) {
+        NSInteger selectRow = self.view.infoTV.selectedRow;
+        [self.interactor.infoArray removeObjectAtIndex:self.view.infoTV.selectedRow];
+        [self.view.infoTV reloadData];
+        
+        if (self.interactor.infoArray.count > 0) {
+            if (selectRow < self.interactor.infoArray.count) {
+                //[self.view.infoTV selectedRow];
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:selectRow];
+                [self.view.infoTV selectRowIndexes:indexSet byExtendingSelection:NO];
+            } else {
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:self.interactor.infoArray.count -1];
+                [self.view.infoTV selectRowIndexes:indexSet byExtendingSelection:NO];
+            }
+        }
+    }
+}
+
 #pragma mark - Interactor_EventHandler
 
 @end
