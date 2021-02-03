@@ -38,6 +38,8 @@
 @synthesize addVideoBT;
 @synthesize compressVideoBT;
 
+@synthesize dragFileView;
+
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
         
@@ -101,11 +103,46 @@
         button;
     });
     
+    [self addDragViews];
     [self addTvs];
+    
+    [self.dragFileView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.infoSV);
+        make.left.mas_equalTo(self.infoSV);
+        make.width.mas_equalTo(self.infoSV);
+        make.height.mas_equalTo(self.infoSV);
+    }];
+    
     [self addBoxs];
     
     [self updateMasonry];
     
+}
+
+- (void)addDragViews {
+    self.dragFileView = [AcceptDragFileView new];
+    
+    [self.view addSubview:self.dragFileView];
+    
+    // demo
+    @weakify(self);
+    self.dragFileView.dragAppBlock = ^(NSArray * array) {
+        @strongify(self);
+        
+        for (int i = 0; i<array.count; i++) {
+            NSString * path = [array[i] path];
+            if ([path.lowercaseString hasSuffix:@"mp4"]
+                || [path.lowercaseString hasSuffix:@"mov"]
+                ) {
+                
+                [self.present addVideoPath:path];
+            }
+            //path = [NSString stringWithFormat:@"file://%@/", path];
+            //NSLog(@"path: %@", path);
+        }
+        
+        [self.infoTV reloadData];
+    };
 }
 
 - (void)addTvs {

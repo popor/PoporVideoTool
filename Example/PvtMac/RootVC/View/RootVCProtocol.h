@@ -9,6 +9,7 @@
 
 #import "EditableTextField.h"
 #import "NSView_prefix.h"
+#import "AcceptDragFileView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -55,7 +56,7 @@ static NSString * TvIdTime       = @"时间";
 @property (nonatomic, strong) NSButton     * addVideoBT;
 @property (nonatomic, strong) NSButton     * compressVideoBT;
 
-
+@property (nonatomic, strong) AcceptDragFileView * dragFileView;
 // MARK: 外部注入的
 
 @end
@@ -76,6 +77,8 @@ static NSString * TvIdTime       = @"时间";
 - (void)outputSizeAction:(NSButton *)bt;
 
 - (void)outputBitAction:(NSButton *)bt;
+
+- (void)addVideoPath:(NSString *)path;
 
 @end
 

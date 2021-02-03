@@ -191,7 +191,7 @@ static CGFloat CellHeight = 20;
         for (int i = 0; i<panel.URLs.count; i++) {
             NSString * path   = [panel.URLs[i] path];
             
-            [self addXcarchivePath:path];
+            [self addVideoPath:path];
         }
         [self.view.videoTV reloadData];
         
@@ -202,7 +202,7 @@ static CGFloat CellHeight = 20;
     
 }
 
-- (void)addXcarchivePath:(NSString *)path {
+- (void)addVideoPath:(NSString *)path {
     VideoEntity * entity = [VideoEntity new];
     entity.path = path;
     entity.fileName = path.lastPathComponent;
