@@ -19,6 +19,8 @@ extern NSString * const MUrl_updateKeepFrontStatusOff;
 
 extern NSString * const MUrl_keyboard_deleteVideo;
 
+extern NSString * const MUrl_windowTitle;
+
 @end
 
 NS_ASSUME_NONNULL_END

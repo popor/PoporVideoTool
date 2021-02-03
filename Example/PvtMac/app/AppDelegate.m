@@ -26,6 +26,7 @@
 #endif
     
     [self addFrontBt];
+    [self updateWindowTitleEvent];
 }
 
 - (void)addFrontBt {
@@ -118,6 +119,17 @@
 #pragma mark - IBAction
 - (IBAction)deleteVideoAction:(id)sender {
     [MGJRouter openURL:MUrl_keyboard_deleteVideo];
+}
+
+- (void)updateWindowTitleEvent {
+    NSApplication * app     = [NSApplication sharedApplication];
+    NSWindow * window       = app.windows.firstObject;
+    
+    [MRouterConfig registerURL:MUrl_windowTitle toHandel:^(NSDictionary *routerParameters) {
+        NSDictionary * dic = routerParameters[MGJRouterParameterUserInfo];
+        NSString     * title = dic[@"title"];
+        window.title = title;
+    }];
 }
 
 @end

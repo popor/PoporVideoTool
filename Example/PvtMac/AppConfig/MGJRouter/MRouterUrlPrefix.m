@@ -16,4 +16,6 @@ NSString * const MUrl_updateKeepFrontStatusOff = @"updateKeepFrontStatusOff";
 
 NSString * const MUrl_keyboard_deleteVideo     = @"keyboard_deleteVideo";
 
+NSString * const MUrl_windowTitle              = @"windowTitle";
+
 @end

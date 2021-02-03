@@ -344,12 +344,15 @@ static CGFloat CellHeight = 20;
     
     //NSLog(@"🍀videoSettings: %@", encoder.videoSettings);
     
+    @weakify(self);
     // 异步压缩
     [encoder compressCompletion:^(PoporVideoTool * _Nonnull poporVideoTool) {
-       
+        @strongify(self);
+        [self updateWindowTitle:entity.fileName Progress:1];
+        
         switch (poporVideoTool.status) {
             case AVAssetExportSessionStatusCompleted: {
-                NSLog(@"Video export succeeded");
+                NSLog(@"Video export succeeded");        
                 entity.compressType = VideoCompressTypeSuccess;
                 break;
             }
@@ -370,8 +373,28 @@ static CGFloat CellHeight = 20;
         }
         
     } progress:^(CGFloat progress) {
-        NSLogFloat(progress);
+        //NSLogFloat(progress);
+        @strongify(self);
+        [self updateWindowTitle:entity.fileName Progress:progress];
     }];
+}
+
+- (void)updateWindowTitle:(NSString *)title Progress:(CGFloat)progress {
+    if (progress == 0) {
+        return;
+    }
+    if (progress == 1) {
+        NSDictionary * dic = @{
+            @"title":@"视频压缩",
+        };
+        [MGJRouter openURL:MUrl_windowTitle withUserInfo:dic completion:nil];
+    } else {
+        NSDictionary * dic = @{
+            @"title":[NSString stringWithFormat:@"视频压缩: %@ - %li", title, (long)(progress *100)],
+        };
+        [MGJRouter openURL:MUrl_windowTitle withUserInfo:dic completion:nil];
+    }
+    
 }
 
 
