@@ -17,6 +17,9 @@
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		C34232D125CA524D004EB95B /* MRouterConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C34232CF25CA524D004EB95B /* MRouterConfig.m */; };
+		C34232D225CA524D004EB95B /* MRouterUrlPrefix.m in Sources */ = {isa = PBXBuildFile; fileRef = C34232D025CA524D004EB95B /* MRouterUrlPrefix.m */; };
+		C34232D725CA5316004EB95B /* MGJRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = C34232D625CA5316004EB95B /* MGJRouter.m */; };
 		C3B7DAEA25C942460054CCAD /* NSBundle+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE225C942460054CCAD /* NSBundle+Tool.m */; };
 		C3B7DAEB25C942460054CCAD /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE525C942460054CCAD /* iToast.m */; };
 		C3B7DAEC25C942460054CCAD /* NSTask+shell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE825C942460054CCAD /* NSTask+shell.m */; };
@@ -58,6 +61,13 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A92DF0BC48E3127F3D66C522 /* Pods-PoporVideoTool_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporVideoTool_Example.debug.xcconfig"; path = "Target Support Files/Pods-PoporVideoTool_Example/Pods-PoporVideoTool_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B0FDF8986B256FAC11DAF536 /* Pods-PvtMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PvtMac.release.xcconfig"; path = "Target Support Files/Pods-PvtMac/Pods-PvtMac.release.xcconfig"; sourceTree = "<group>"; };
+		C34232CD25CA524D004EB95B /* MRouterConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRouterConfig.h; sourceTree = "<group>"; };
+		C34232CE25CA524D004EB95B /* MRouterUrlPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRouterUrlPrefix.h; sourceTree = "<group>"; };
+		C34232CF25CA524D004EB95B /* MRouterConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRouterConfig.m; sourceTree = "<group>"; };
+		C34232D025CA524D004EB95B /* MRouterUrlPrefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRouterUrlPrefix.m; sourceTree = "<group>"; };
+		C34232D525CA5316004EB95B /* MGJRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJRouter.h; sourceTree = "<group>"; };
+		C34232D625CA5316004EB95B /* MGJRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJRouter.m; sourceTree = "<group>"; };
+		C34232DA25CA533F004EB95B /* app-prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-prefix.h"; sourceTree = "<group>"; };
 		C3B7DAE125C942460054CCAD /* NSBundle+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Tool.h"; sourceTree = "<group>"; };
 		C3B7DAE225C942460054CCAD /* NSBundle+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Tool.m"; sourceTree = "<group>"; };
 		C3B7DAE425C942460054CCAD /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
@@ -196,6 +206,27 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		C34232CB25CA524D004EB95B /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				C34232CC25CA524D004EB95B /* MGJRouter */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		C34232CC25CA524D004EB95B /* MGJRouter */ = {
+			isa = PBXGroup;
+			children = (
+				C34232D525CA5316004EB95B /* MGJRouter.h */,
+				C34232D625CA5316004EB95B /* MGJRouter.m */,
+				C34232CD25CA524D004EB95B /* MRouterConfig.h */,
+				C34232CF25CA524D004EB95B /* MRouterConfig.m */,
+				C34232CE25CA524D004EB95B /* MRouterUrlPrefix.h */,
+				C34232D025CA524D004EB95B /* MRouterUrlPrefix.m */,
+			);
+			path = MGJRouter;
+			sourceTree = "<group>";
+		};
 		C3A7C4B625C295730037F399 /* other */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,8 +315,9 @@
 		C3EDE9E425C5103500FAC920 /* PvtMac */ = {
 			isa = PBXGroup;
 			children = (
-				C3B7DADE25C942460054CCAD /* public */,
 				C3EDEA1725C5107C00FAC920 /* other */,
+				C34232CB25CA524D004EB95B /* AppConfig */,
+				C3B7DADE25C942460054CCAD /* public */,
 				C3EDE9ED25C5103700FAC920 /* Main.storyboard */,
 				C3B7DA5C25C922B80054CCAD /* app */,
 				C3EDEBA325C5433400FAC920 /* RootVC */,
@@ -318,6 +350,7 @@
 				C3EDE9F025C5103700FAC920 /* Info.plist */,
 				C3EDE9F125C5103700FAC920 /* main.m */,
 				C3EDE9F325C5103700FAC920 /* PvtMac.entitlements */,
+				C34232DA25CA533F004EB95B /* app-prefix.h */,
 			);
 			name = other;
 			sourceTree = "<group>";
@@ -627,9 +660,12 @@
 			files = (
 				C3B7DAEB25C942460054CCAD /* iToast.m in Sources */,
 				C3EDEBB825C5435D00FAC920 /* RootVC.m in Sources */,
+				C34232D125CA524D004EB95B /* MRouterConfig.m in Sources */,
+				C34232D225CA524D004EB95B /* MRouterUrlPrefix.m in Sources */,
 				C3EDE9F225C5103700FAC920 /* main.m in Sources */,
 				C3EDEBDC25C54FAC00FAC920 /* VideoEntity.m in Sources */,
 				C3B7DAEC25C942460054CCAD /* NSTask+shell.m in Sources */,
+				C34232D725CA5316004EB95B /* MGJRouter.m in Sources */,
 				C3B7DAF625C951450054CCAD /* NSFont+pSize.m in Sources */,
 				C3EDE9E725C5103500FAC920 /* AppDelegate.m in Sources */,
 				C3EDEBB925C5435D00FAC920 /* RootVCInteractor.m in Sources */,
@@ -809,6 +845,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "PvtMac/app-prefix.h";
 				INFOPLIST_FILE = PvtMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
@@ -854,6 +891,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "PvtMac/app-prefix.h";
 				INFOPLIST_FILE = PvtMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;

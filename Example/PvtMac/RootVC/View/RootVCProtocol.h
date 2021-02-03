@@ -45,8 +45,10 @@ static NSString * TvIdTime       = @"时间";
 @property (nonatomic, strong) NSTextField * outputWidthTF;
 @property (nonatomic, strong) NSTextField * outputHeightTF;
 
-@property (nonatomic, strong) NSTextField * outputBitL;
+@property (nonatomic, strong) NSButton    * outputBitScaleBT;
 @property (nonatomic, strong) NSTextField * outputBitScaleTF;
+
+@property (nonatomic, strong) NSButton    * outputBitBT;
 @property (nonatomic, strong) NSTextField * outputBitRateTF;
 
 
@@ -72,6 +74,8 @@ static NSString * TvIdTime       = @"时间";
 - (void)outputFolderAction:(id)sender;
 
 - (void)outputSizeAction:(NSButton *)bt;
+
+- (void)outputBitAction:(NSButton *)bt;
 
 @end
 

@@ -10,7 +10,6 @@
 #import "RootVCInteractor.h"
 
 #import <Masonry/Masonry.h>
-#import <ReactiveObjC/ReactiveObjC.h>
 #import "PoporNS.h"
 
 @interface RootVC ()
@@ -29,9 +28,10 @@
 @synthesize outputWidthTF;
 @synthesize outputHeightTF;
 
-
-@synthesize outputBitL;
+@synthesize outputBitScaleBT;
 @synthesize outputBitScaleTF;
+
+@synthesize outputBitBT;
 @synthesize outputBitRateTF;
 
 @synthesize addVideoBT;
@@ -85,8 +85,6 @@
 }
 
 - (void)addViews {
-   
-   
     
     self.addVideoBT = ({
         NSButton * button = [NSButton buttonWithTitle:@"添加文件" target:self action:@selector(addVideoAction:)];
@@ -280,23 +278,23 @@
         make.left.mas_equalTo(self.infoSV.mas_right).mas_offset(20);
         //make.bottom.mas_equalTo(-20);
         make.width.mas_equalTo(281);
-        make.height.mas_equalTo(114);
+        make.height.mas_equalTo(124);
         make.right.mas_equalTo(-20);
     }];
-    
+    //---- 1.1
     self.outputOriginSizeBT = ({
         NSButton * button = [NSButton radioButtonWithTitle:@"原始分辨率" target:self.present action:@selector(outputSizeAction:)];
-        button.state = NSControlStateValueOn;
         
         [self.setBox addSubview:button];
         
         button;
     });
-    
+    //---- 1.2
     self.outputSizeBT = ({
         NSButton * button = [NSButton radioButtonWithTitle:@"固定分辨率" target:self.present action:@selector(outputSizeAction:)];
         [self.setBox addSubview:button];
         
+        button.toolTip = @"视频压缩后的长宽为540x960或者960x540";
         button;
     });
     
@@ -319,12 +317,55 @@
         tf;
     });
     
+    //---- 2.1
+    self.outputBitScaleBT = ({
+        NSButton * button = [NSButton radioButtonWithTitle:@"相对比特率" target:self.present action:@selector(outputBitAction:)];
+        [self.setBox addSubview:button];
+        
+        button.toolTip = @"推荐使用此配置，微信视频压缩系数为2，（视频长x视频宽x2）";
+        
+        button;
+    });
+    
+    self.outputBitScaleTF = ({
+        EditableTextField * tf = [[EditableTextField alloc] init];
+        tf.editable    = YES;
+        tf.selectable  = YES;
+        tf.placeholderString = @"0.1 ~ 10.0";
+        tf.stringValue = @"2";
+        [self.setBox addSubview:tf];
+        
+        tf;
+    });
+    //---- 2.2
+    self.outputBitBT = ({
+        NSButton * button = [NSButton radioButtonWithTitle:@"固定比特率" target:self.present action:@selector(outputBitAction:)];
+        [self.setBox addSubview:button];
+        
+        button.toolTip = @"此配置能保证视频容量固定不变";
+        
+        button;
+    });
+    
+    self.outputBitRateTF = ({
+        EditableTextField * tf = [[EditableTextField alloc] init];
+        tf.editable    = YES;
+        tf.selectable  = YES;
+        tf.placeholderString = @"1000 000 ~ 10 000 000";
+        tf.stringValue = @"1000 000";
+        [self.setBox addSubview:tf];
+        
+        tf;
+    });
+    
     CGFloat LHeight = 20;
+    CGFloat left    = 5;
+    CGFloat BtWidth = 90;
     //....................................................................................
     [self.outputOriginSizeBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(10);
-        make.left.mas_equalTo(5);
-        make.width.mas_equalTo(90);
+        make.top.mas_equalTo(0);
+        make.left.mas_equalTo(left);
+        make.width.mas_equalTo(BtWidth);
         make.height.mas_equalTo(20);
         //make.height.mas_equalTo(self.outputSizeBT.font.lineHeight);
     }];
@@ -345,11 +386,38 @@
         make.top.mas_equalTo(self.outputWidthTF);
         make.left.mas_equalTo(self.outputWidthTF.mas_right).mas_offset(10);
         make.width.mas_equalTo(self.outputWidthTF);
-        make.right.mas_equalTo(-5);
+        make.right.mas_equalTo(-left);
         make.height.mas_equalTo(LHeight);
     }];
     
-   
+    // 2.1
+    [self.outputBitScaleBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.outputBitScaleTF);
+        make.left.mas_equalTo(left);
+        make.width.mas_equalTo(BtWidth);
+    }];
+    [self.outputBitScaleTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.outputSizeBT.mas_bottom).mas_offset(10);
+        make.left.mas_equalTo(self.outputBitScaleBT.mas_right).mas_offset(10);
+        make.right.mas_equalTo(-left);
+        make.height.mas_equalTo(LHeight);
+    }];
+    [self.outputBitBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.outputBitRateTF);
+        make.left.mas_equalTo(left);
+        make.width.mas_equalTo(BtWidth);
+    }];
+    [self.outputBitRateTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.outputBitScaleTF.mas_bottom).mas_offset(10);
+        make.left.mas_equalTo(self.outputBitBT.mas_right).mas_offset(10);
+        make.right.mas_equalTo(-left);
+        make.height.mas_equalTo(LHeight);
+    }];
+    
+    // 默认值
+    self.outputOriginSizeBT.state = NSControlStateValueOn;
+    self.outputBitScaleBT.state   = NSControlStateValueOn;
+    
 }
 
 // 开始执行事件,比如获取网络数据

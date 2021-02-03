@@ -51,11 +51,29 @@
     NSString * front = [self get__keepFront];
     if (front.integerValue == 0) {
         self.frontBT.state = NSControlStateValueOn;
-        [self keepAtFront:NO];
+        [self keepAtFront:YES];
     } else {
         self.frontBT.state = NSControlStateValueOff;
-        [self keepAtFront:YES];
+        [self keepAtFront:NO];
     }
+    
+    @weakify(self);
+    [MGJRouter registerURLPattern:MUrl_updateKeepFrontStatus toHandler:^(NSDictionary *routerParameters) {
+        @strongify(self);
+        
+        [self updateKeepFrontStatus];
+    }];
+    
+    [MGJRouter registerURLPattern:MUrl_updateKeepFrontStatusOn toHandler:^(NSDictionary *routerParameters) {
+        @strongify(self);
+        
+        [self keepAtFront:YES];
+    }];
+    [MGJRouter registerURLPattern:MUrl_updateKeepFrontStatusOff toHandler:^(NSDictionary *routerParameters) {
+        @strongify(self);
+        
+        [self keepAtFront:NO];
+    }];
 }
 
 
@@ -71,15 +89,18 @@
         bt.state = NSControlStateValueOn;
     }
     //NSLog(@"%li", bt.state);
-    
-    [self keepAtFront:bt.state != NSControlStateValueOn];
+    [self updateKeepFrontStatus];
+}
+
+- (void)updateKeepFrontStatus {
+    [self keepAtFront:self.frontBT.state == NSControlStateValueOn];
 }
 
 - (void)keepAtFront:(BOOL)front {
     if (front) {
-        [NSApp.windows[0] setLevel:NSNormalWindowLevel];
-    }else{
         [NSApp.windows[0] setLevel:NSFloatingWindowLevel];
+    }else{
+        [NSApp.windows[0] setLevel:NSNormalWindowLevel];
     }
     [self save__keepFront:[NSString stringWithFormat:@"%i", front]];
 }

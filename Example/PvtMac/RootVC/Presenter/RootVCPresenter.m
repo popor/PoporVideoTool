@@ -185,17 +185,19 @@ static CGFloat CellHeight = 20;
     
     panel.canCreateDirectories    = YES; // 增加显示添加文件夹按钮
     
-    [NSApp.windows[0] setLevel:NSNormalWindowLevel];
-    
+    //[NSApp.windows[0] setLevel:NSNormalWindowLevel];
+    [MGJRouter openURL:MUrl_updateKeepFrontStatusOff];
     if ([panel runModal] == NSModalResponseOK) {
-        
         for (int i = 0; i<panel.URLs.count; i++) {
             NSString * path   = [panel.URLs[i] path];
             
             [self addXcarchivePath:path];
         }
-        
         [self.view.videoTV reloadData];
+        
+        [MGJRouter openURL:MUrl_updateKeepFrontStatusOn];
+    } else {
+        [MGJRouter openURL:MUrl_updateKeepFrontStatusOn];
     }
     
 }
@@ -259,21 +261,14 @@ static CGFloat CellHeight = 20;
                 continue;
             }
             
-            /*
-             //NSString * outPutPath = [entity.path replaceWithREG:@"(\\.\\w{3,5})$" newString:@"_压缩$1"];
-             
-             //NSString * outPutPath = [entity.path substringToIndex:entity.path.length -entity.path.pathExtension.length -1];
-             //outPutPath = [NSString stringWithFormat:@"%@_压缩.mp4", outPutPath];
-             */
-            
             NSURL * originUrl = [NSURL fileURLWithPath:entity.path];
             if (!self.interactor.outputFolderPath) {
-                AlertToastTitle(@"请设置输出文件夹", self.view.vc.view);
+                [self alertRedTitle:@"请设置输出文件夹"];
                 return;
             } else {
                 NSString * outPutPath = entity.path.lastPathComponent;
                 outPutPath = [outPutPath substringToIndex:outPutPath.length -outPutPath.pathExtension.length -1];
-                outPutPath = [NSString stringWithFormat:@"%@/wkq%@_压缩.mp4", self.interactor.outputFolderPath, outPutPath];
+                outPutPath = [NSString stringWithFormat:@"%@/%@_压缩.mp4", self.interactor.outputFolderPath, outPutPath];
                 if ([NSFileManager isFileExist:outPutPath]) {
                     continue;
                 } else {
@@ -290,11 +285,11 @@ static CGFloat CellHeight = 20;
             self.view.compressVideoBT.state = NSControlStateValueOn;
         } else {
             self.view.compressVideoBT.state = NSControlStateValueOff;
-            AlertToastTitleTimeTextColorBgColor(@"视频压缩完成", 3, self.view.vc.view, NSColor.whiteColor, NSColor.redColor);
+            [self alertRedTitle:@"视频压缩完成"];
         }
         
     } else {
-        AlertToastTitle(@"请添加压缩视频", self.view.vc.view);
+        [self alertRedTitle:@"请添加压缩视频"];
         self.view.compressVideoBT.state = NSControlStateValueOff;
     }
 }
@@ -310,18 +305,41 @@ static CGFloat CellHeight = 20;
     encoder.outputURL       = outPutUrl;
     
     // 获取压缩视频Size
-    CGSize prioritySize = CGSizeMake(540, 960);
-    CGSize originSize   = [PoporVideoTool sizeVideoUrl:videoOriginUrl];
-    CGSize targetSize   = [PoporVideoTool sizeFrom:originSize toSize:prioritySize];
+    CGSize originSize = [PoporVideoTool sizeVideoUrl:videoOriginUrl];
+    CGSize targetSize;
+    if (self.view.outputOriginSizeBT.state == NSControlStateValueOn) {
+        targetSize   = originSize;
+    } else {
+        if (self.view.outputWidthTF.floatValue <= 0) {
+            [self alertRedTitle:@"请检查固定分辨率宽度"];
+            return;
+        }
+        if (self.view.outputHeightTF.floatValue <= 0) {
+            [self alertRedTitle:@"请检查固定分辨率高度"];
+            return;
+        }
+        CGSize prioritySize = CGSizeMake(self.view.outputWidthTF.floatValue, self.view.outputHeightTF.floatValue);
+        
+        targetSize   = [PoporVideoTool sizeFrom:originSize toSize:prioritySize];
+    }
     
-    // 测试其他size.
-    //targetSize = originSize;
-    //targetSize = CGSizeMake(originSize.width -1, originSize.height -1);
-    //targetSize = CGSizeMake(originSize.width *0.8, originSize.height *0.8);
-    //targetSize = CGSizeMake(originSize.width *1.2, originSize.height *1.2);
+    if (self.view.outputBitScaleBT.state == NSControlStateValueOn) {
+        if (self.view.outputBitScaleTF.floatValue <= 0) {
+            [self alertRedTitle:@"请检查相对比特率数值"];
+            return;
+        }
+        encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize size_BitRate_scale:self.view.outputBitScaleTF.floatValue];// 视频参数
+    } else {
+        if (self.view.outputBitRateTF.floatValue <= 0) {
+            [self alertRedTitle:@"请检查相对比特率数值"];
+            return;
+        }
+        
+        encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize bitRate:self.view.outputBitRateTF.floatValue];// 视频参数
+    }
     
     // 设置压缩配置
-    encoder.videoSettings = [PoporVideoTool dicVideoSettingsSize:targetSize size_BitRate_scale:2];// 视频参数
+    
     encoder.audioSettings = [PoporVideoTool dicAudioSettings]; // 音频参数
     
     //NSLog(@"🍀videoSettings: %@", encoder.videoSettings);
@@ -357,6 +375,10 @@ static CGFloat CellHeight = 20;
 }
 
 
+- (void)alertRedTitle:(NSString *)title {
+    AlertToastTitleTimeTextColorBgColor(title, 3, self.view.vc.view, NSColor.whiteColor, NSColor.redColor);
+}
+
 - (void)outputFolderAction:(id)sender {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     
@@ -367,10 +389,9 @@ static CGFloat CellHeight = 20;
     
     panel.canCreateDirectories    = YES; // 增加显示添加文件夹按钮
     
-    [NSApp.windows[0] setLevel:NSNormalWindowLevel];
-    
+    //[NSApp.windows[0] setLevel:NSNormalWindowLevel];
+    [MGJRouter openURL:MUrl_updateKeepFrontStatusOff];
     if ([panel runModal] == NSModalResponseOK) {
-        
         if (panel.URLs.count > 0) {
             NSString * path = [panel.URLs.firstObject path];
             
@@ -378,7 +399,9 @@ static CGFloat CellHeight = 20;
             self.interactor.outputFolderPath     = path;
             self.view.outputFolderTF.stringValue = path;
         }
-        
+        [MGJRouter openURL:MUrl_updateKeepFrontStatusOn];
+    } else {
+        [MGJRouter openURL:MUrl_updateKeepFrontStatusOn];
     }
 }
 
@@ -390,6 +413,16 @@ static CGFloat CellHeight = 20;
         self.view.outputSizeBT.state = NSControlStateValueOff;
     }
 }
+
+- (void)outputBitAction:(NSButton *)bt {
+    bt.state = NSControlStateValueOn;
+    if (bt != self.view.outputBitScaleBT) {
+        self.view.outputBitScaleBT.state = NSControlStateValueOff;
+    } else {
+        self.view.outputBitBT.state = NSControlStateValueOff;
+    }
+}
+
 #pragma mark - Interactor_EventHandler
 
 @end

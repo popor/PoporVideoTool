@@ -19,5 +19,6 @@ target 'PvtMac' do
   pod 'Masonry'
   pod 'ReactiveObjC'
   pod 'PoporFoundation'
+  pod 'MGJRouter'
   
 end
