@@ -10,6 +10,7 @@
 #import "RootVCInteractor.h"
 
 #import <Masonry/Masonry.h>
+#import <PoporFoundation/NSMutableAttributedString+pAtt.h>
 #import "PoporNS.h"
 
 @interface RootVC ()
@@ -87,7 +88,7 @@
 - (void)addViews {
     
     self.addVideoBT = ({
-        NSButton * button = [NSButton buttonWithTitle:@"添加文件" target:self action:@selector(addVideoAction:)];
+        NSButton * button = [NSButton buttonWithTitle:@"添加视频" target:self action:@selector(addVideoAction:)];
         [self.view addSubview:button];
         
         button;
@@ -118,7 +119,7 @@
     
     
     self.outputFolderBT = ({
-        NSButton * button = [NSButton buttonWithTitle:@"保存文件件" target:self.present action:@selector(outputFolderAction:)];
+        NSButton * button = [NSButton buttonWithTitle:@"保存文件夹" target:self.present action:@selector(outputFolderAction:)];
         [self.view addSubview:button];
         
         button;
@@ -352,7 +353,8 @@
         tf.editable    = YES;
         tf.selectable  = YES;
         tf.placeholderString = @"1000 000 ~ 10 000 000";
-        tf.stringValue = @"1000 000";
+        tf.allowsEditingTextAttributes = YES;
+        
         [self.setBox addSubview:tf];
         
         tf;
@@ -417,6 +419,20 @@
     // 默认值
     self.outputOriginSizeBT.state = NSControlStateValueOn;
     self.outputBitScaleBT.state   = NSControlStateValueOn;
+    
+    
+    @weakify(self);
+    
+    self.outputBitRateTF.stringValue = @"1000000";
+    [self.outputBitRateTF.rac_textSignal subscribeNext:^(NSString * text) {
+        @strongify(self);
+        
+        NSMutableAttributedString * att = [NSMutableAttributedString separateText:text bigGap:5 smallGap:0 separateNumber:3 reverseSort:YES];
+        
+        att.color(NSColor.textColor).font([NSFont systemFontOfSize:12]);
+        self.outputBitRateTF.attributedStringValue = att;
+    }];
+    
     
 }
 

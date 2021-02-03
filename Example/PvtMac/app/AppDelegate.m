@@ -49,7 +49,7 @@
     
     // event
     NSString * front = [self get__keepFront];
-    if (front.integerValue == 0) {
+    if (front.integerValue == 1) {
         self.frontBT.state = NSControlStateValueOn;
         [self keepAtFront:YES];
     } else {
