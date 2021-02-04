@@ -141,4 +141,9 @@
     return i;
 }
 
+#pragma mark - 点击事件
+- (void)mouseDown:(NSEvent *)event {
+    [self removeFromSuperview];
+}
+
 @end
