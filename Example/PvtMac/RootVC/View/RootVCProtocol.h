@@ -30,6 +30,8 @@ static NSString * TvIdBitRate    = @"比特率";
 static NSString * TvIdSize       = @"容量";
 static NSString * TvIdTime       = @"时间";
 
+static NSString * OutPutTitle    = @"导出文件夹";
+
 // MARK: 对外接口
 @protocol RootVCProtocol <NSObject>
 
@@ -41,6 +43,8 @@ static NSString * TvIdTime       = @"时间";
 @property (nonatomic, strong) NSTableView  * infoTV;
 @property (nonatomic, strong) NSBox        * setBox;
 
+
+@property (nonatomic, strong) NSButton    * helpBT;
 
 @property (nonatomic, strong) NSButton    * outputFolderBT;
 @property (nonatomic, strong) NSTextField * outputFolderTF;
@@ -73,6 +77,8 @@ static NSString * TvIdTime       = @"时间";
 
 // MARK: UI事件
 @protocol RootVCEventHandler <NSObject>
+
+- (void)helpAction:(id)sender;
 
 - (void)addVideoAction:(id)sender;
 - (void)compressVideoAction:(NSButton * _Nullable)sender;

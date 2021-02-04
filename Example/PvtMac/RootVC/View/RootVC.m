@@ -24,6 +24,7 @@
 @synthesize infoTV;
 @synthesize setBox;
 
+@synthesize helpBT;
 @synthesize outputFolderBT;
 @synthesize outputFolderTF;
 
@@ -92,20 +93,7 @@
 }
 
 - (void)addViews {
-    
-    self.addVideoBT = ({
-        NSButton * button = [NSButton buttonWithTitle:@"添加视频" target:self action:@selector(addVideoAction:)];
-        [self.view addSubview:button];
-        
-        button;
-    });
-    
-    self.compressVideoBT = ({
-        NSButton * button = [NSButton buttonWithTitle:@"压缩" target:self.present action:@selector(compressVideoAction:)];
-        [self.view addSubview:button];
-        
-        button;
-    });
+  
     
     [self addDragViews];
     [self addTvs];
@@ -118,7 +106,7 @@
     }];
     
     [self addBoxs];
-    
+    [self addBts];
     [self updateMasonry];
 }
 
@@ -156,71 +144,20 @@
         self.infoSV = sv;
         self.infoTV = tv;
     }];
-    
-    
-    self.outputFolderBT = ({
-        NSButton * button = [NSButton buttonWithTitle:@"保存文件夹" target:self.present action:@selector(outputFolderAction:)];
-        [self.view addSubview:button];
-        
-        button;
-    });
-    
-    self.outputFolderTF = ({
-        EditableTextField * tf = [[EditableTextField alloc] init];
-        tf.editable = NO;
-        tf.selectable = YES;
-        [self.view addSubview:tf];
-        
-        tf;
-    });
-    
     //....................................................................................
     [self.infoSV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(20);
         make.left.mas_equalTo(20);
-        //make.bottom.mas_equalTo(-20);
-        make.width.mas_greaterThanOrEqualTo(200);
-        make.height.mas_greaterThanOrEqualTo(100);
-    }];
-    
-    [self.outputFolderBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.infoSV.mas_bottom).mas_offset(10);
-        make.left.mas_equalTo(20);
-        make.size.mas_equalTo(CGSizeMake(80, 24));
         make.bottom.mas_equalTo(-20);
-    }];
-    
-    [self.outputFolderTF mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.outputFolderBT);
-        make.left.mas_equalTo(self.outputFolderBT.mas_right).mas_offset(10);
-        make.height.mas_equalTo(self.outputFolderBT);
-        make.right.mas_equalTo(self.infoSV);
+        
+        make.width.mas_greaterThanOrEqualTo(200);
+        make.height.mas_greaterThanOrEqualTo(200);
     }];
 }
 
 - (void)updateMasonry {
     [self.view addSubview:self.infoSV];
     [self.view addSubview:self.setBox];
-    [self.view addSubview:self.addVideoBT];
-    [self.view addSubview:self.compressVideoBT];
-    
-    
-    [self.addVideoBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.setBox.mas_bottom).mas_offset(20);
-        make.left.mas_equalTo(self.setBox);
-        make.bottom.mas_equalTo(-20);
-        //make.right.mas_equalTo(self.setBox);
-        make.size.mas_equalTo(CGSizeMake(75, 24));
-    }];
-    
-    [self.compressVideoBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.addVideoBT);
-        //make.left.mas_equalTo(0);
-        make.bottom.mas_equalTo(self.addVideoBT);
-        make.right.mas_equalTo(-20);
-        
-        make.size.mas_equalTo(CGSizeMake(75, 24));
-    }];
     
     [self.view needsUpdateConstraints];
 }
@@ -330,6 +267,20 @@
         
         button;
     });
+    
+    self.helpBT = ({
+        NSButton * button = [NSButton new];
+        button.title = @"";
+        
+        button.bezelStyle = NSBezelStyleHelpButton;
+        
+        button.target = self.present;
+        button.action = @selector(helpAction:);
+        
+        [self.setBox addSubview:button];
+        
+        button;
+    });
     //---- 1.2
     self.outputSizeBT = ({
         NSButton * button = [NSButton radioButtonWithTitle:@"固定分辨率" target:self.present action:@selector(outputSizeAction:)];
@@ -383,7 +334,7 @@
         NSButton * button = [NSButton radioButtonWithTitle:@"固定比特率" target:self.present action:@selector(outputBitAction:)];
         [self.setBox addSubview:button];
         
-        button.toolTip = @"此配置能保证视频容量固定不变";
+        button.toolTip = @"此配置能保证视频平均容量固定不变";
         
         button;
     });
@@ -410,6 +361,13 @@
         make.width.mas_equalTo(BtWidth);
         make.height.mas_equalTo(20);
         //make.height.mas_equalTo(self.outputSizeBT.font.lineHeight);
+    }];
+    [self.helpBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(0);
+        make.right.mas_equalTo(-left);
+        //make.width.mas_equalTo(BtWidth);
+        //make.height.mas_equalTo(20);
+        
     }];
     
     [self.outputSizeBT mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -472,8 +430,74 @@
         att.color(NSColor.textColor).font([NSFont systemFontOfSize:12]);
         self.outputBitRateTF.attributedStringValue = att;
     }];
+}
+
+- (void)addBts {
     
+    self.outputFolderBT = ({
+        NSButton * button = [NSButton buttonWithTitle:OutPutTitle target:self.present action:@selector(outputFolderAction:)];
+        [self.view addSubview:button];
+        
+        button;
+    });
     
+    self.outputFolderTF = ({
+        EditableTextField * tf = [[EditableTextField alloc] init];
+        tf.editable = NO;
+        tf.selectable = YES;
+        [self.view addSubview:tf];
+        
+        tf;
+    });
+    
+    self.addVideoBT = ({
+        NSButton * button = [NSButton buttonWithTitle:@"添加" target:self action:@selector(addVideoAction:)];
+        [self.view addSubview:button];
+        
+        button;
+    });
+    
+    self.compressVideoBT = ({
+        NSButton * button = [NSButton buttonWithTitle:@"压缩" target:self.present action:@selector(compressVideoAction:)];
+        [self.view addSubview:button];
+        
+        button;
+    });
+    
+    CGFloat BtWidth  = 70;
+    CGFloat BtHeight = 24;
+    [self.outputFolderBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.setBox.mas_bottom).mas_offset(7);
+        make.left.mas_equalTo(self.setBox);
+        //make.size.mas_equalTo(CGSizeMake(BtWidth, BtHeight));
+        make.height.mas_equalTo(BtHeight);
+    }];
+    
+    [self.outputFolderTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        //make.top.mas_equalTo(self.outputFolderBT);
+        //make.left.mas_equalTo(self.outputFolderBT.mas_right).mas_offset(10);
+        
+        make.top.mas_equalTo(self.outputFolderBT.mas_bottom).mas_offset(5);
+        make.left.mas_equalTo(self.outputFolderBT);
+        
+        make.right.mas_equalTo(-20);
+    }];
+    
+    [self.addVideoBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.outputFolderTF.mas_bottom).mas_offset(10);
+        make.left.mas_equalTo(self.setBox);
+        make.size.mas_equalTo(CGSizeMake(BtWidth, BtHeight));
+        
+        make.bottom.mas_lessThanOrEqualTo(-20);
+    }];
+    
+    [self.compressVideoBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.addVideoBT);
+        make.right.mas_equalTo(-20);
+        make.size.mas_equalTo(CGSizeMake(BtWidth, BtHeight));
+        
+        //make.bottom.mas_equalTo(self.addVideoBT);
+    }];
 }
 
 // 开始执行事件,比如获取网络数据

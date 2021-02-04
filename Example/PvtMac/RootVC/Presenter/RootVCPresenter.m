@@ -263,7 +263,7 @@ static CGFloat CellHeight = 20;
             
             NSURL * originUrl = [NSURL fileURLWithPath:entity.path];
             if (!self.interactor.outputFolderPath) {
-                [self alertRedTitle:@"请设置输出文件夹"];
+                [self alertRedTitle:[NSString stringWithFormat:@"请设置 %@", OutPutTitle]];
                 return;
             } else {
                 NSString * outPutPath = entity.path.lastPathComponent;
@@ -463,6 +463,46 @@ static CGFloat CellHeight = 20;
             }
         }
     }
+}
+
+- (void)helpAction:(id)sender {
+    //NSString * title = @"原始分辨率: 和原视频采用相同的分辨率。\n固定分辨率: 视频压缩后的长宽为540x960或者960x540。\n相对比特率: 推荐使用此配置，微信视频压缩系数为2，（视频长x视频宽x2）。\n固定比特率: 此配置能保证视频容量固定不变。";
+    //[self alertRedTitle:text];
+    
+    iToast * i = [iToast new];
+    i.alignment = NSTextAlignmentLeft;
+    i.duration  = 20;
+    NSFont * font    = [NSFont systemFontOfSize:15];
+    NSColor * color1 = [NSColor grayColor];
+    NSColor * color2 = [NSColor whiteColor];
+    NSColor * color3 = [NSColor redColor];
+    
+    {
+        NSMutableAttributedString * att = [NSMutableAttributedString new];
+        [att addString:@"原始分辨率: " font:font color:color1];
+        [att addString:@"和原视频采用相同的分辨率。\n" font:font color:color2];
+        
+        [att addString:@"固定分辨率: " font:font color:color1];
+        [att addString:@"视频压缩后的长宽为540x960" font:font color:color2];
+        [att addString:@"或者" font:font color:color3];
+        [att addString:@"960x540。\n" font:font color:color2];
+        
+        [att addString:@"相对比特率: " font:font color:color1];
+        [att addString:@"推荐" font:font color:color3];
+        [att addString:@"使用此配置，微信视频压缩系数为2，(视频长x视频宽x2)。\n" font:font color:color2];
+        
+        [att addString:@"固定比特率: " font:font color:color1];
+        [att addString:@"此配置能保证视频平均容量固定不变。" font:font color:color2];
+        
+        att.paraStyle(PAttStyle.pLineSpacing(5));
+        
+        [i setTitleAtt:att];
+    }
+    
+    [i updateSize];
+    [i showAtView:self.view.vc.view];
+
+    
 }
 
 #pragma mark - Interactor_EventHandler
