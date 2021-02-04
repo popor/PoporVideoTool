@@ -343,7 +343,7 @@
         EditableTextField * tf = [[EditableTextField alloc] init];
         tf.editable    = YES;
         tf.selectable  = YES;
-        tf.placeholderString = @"1000 000 ~ 10 000 000";
+        tf.placeholderString = @"1 000 000 ~ 10 000 000";
         tf.allowsEditingTextAttributes = YES;
         
         [self.setBox addSubview:tf];
@@ -443,8 +443,8 @@
     
     self.outputFolderTF = ({
         EditableTextField * tf = [[EditableTextField alloc] init];
-        tf.editable = NO;
-        tf.selectable = YES;
+        tf.editable   = NO;
+        tf.selectable = YES;        
         [self.view addSubview:tf];
         
         tf;
