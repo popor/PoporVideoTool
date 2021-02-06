@@ -21,6 +21,7 @@
 		C34232D225CA524D004EB95B /* MRouterUrlPrefix.m in Sources */ = {isa = PBXBuildFile; fileRef = C34232D025CA524D004EB95B /* MRouterUrlPrefix.m */; };
 		C34232D725CA5316004EB95B /* MGJRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = C34232D625CA5316004EB95B /* MGJRouter.m */; };
 		C342332025CA8114004EB95B /* AcceptDragFileView.m in Sources */ = {isa = PBXBuildFile; fileRef = C342331E25CA8114004EB95B /* AcceptDragFileView.m */; };
+		C39B79BC25CE2DAA0023E9AE /* AppKeepFront.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B79BB25CE2DAA0023E9AE /* AppKeepFront.m */; };
 		C3B7DAEA25C942460054CCAD /* NSBundle+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE225C942460054CCAD /* NSBundle+Tool.m */; };
 		C3B7DAEB25C942460054CCAD /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE525C942460054CCAD /* iToast.m */; };
 		C3B7DAEC25C942460054CCAD /* NSTask+shell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7DAE825C942460054CCAD /* NSTask+shell.m */; };
@@ -71,6 +72,8 @@
 		C34232DA25CA533F004EB95B /* app-prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-prefix.h"; sourceTree = "<group>"; };
 		C342331E25CA8114004EB95B /* AcceptDragFileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptDragFileView.m; sourceTree = "<group>"; };
 		C342331F25CA8114004EB95B /* AcceptDragFileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptDragFileView.h; sourceTree = "<group>"; };
+		C39B79BA25CE2DAA0023E9AE /* AppKeepFront.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKeepFront.h; sourceTree = "<group>"; };
+		C39B79BB25CE2DAA0023E9AE /* AppKeepFront.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppKeepFront.m; sourceTree = "<group>"; };
 		C3B7DAE125C942460054CCAD /* NSBundle+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Tool.h"; sourceTree = "<group>"; };
 		C3B7DAE225C942460054CCAD /* NSBundle+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Tool.m"; sourceTree = "<group>"; };
 		C3B7DAE425C942460054CCAD /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
@@ -239,6 +242,15 @@
 			path = AcceptDragFileView;
 			sourceTree = "<group>";
 		};
+		C39B79B925CE2D7B0023E9AE /* AppKeepFront */ = {
+			isa = PBXGroup;
+			children = (
+				C39B79BA25CE2DAA0023E9AE /* AppKeepFront.h */,
+				C39B79BB25CE2DAA0023E9AE /* AppKeepFront.m */,
+			);
+			path = AppKeepFront;
+			sourceTree = "<group>";
+		};
 		C3A7C4B625C295730037F399 /* other */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				C3B7DAE925C942460054CCAD /* NSView_prefix.h */,
+				C39B79B925CE2D7B0023E9AE /* AppKeepFront */,
 				C3B7DAE025C942460054CCAD /* NSBundle */,
 				C3B7DAE325C942460054CCAD /* iToast */,
 				C3B7DAE625C942460054CCAD /* NSTask_shell */,
@@ -679,6 +692,7 @@
 				C3EDEBDC25C54FAC00FAC920 /* VideoEntity.m in Sources */,
 				C3B7DAEC25C942460054CCAD /* NSTask+shell.m in Sources */,
 				C342332025CA8114004EB95B /* AcceptDragFileView.m in Sources */,
+				C39B79BC25CE2DAA0023E9AE /* AppKeepFront.m in Sources */,
 				C34232D725CA5316004EB95B /* MGJRouter.m in Sources */,
 				C3B7DAF625C951450054CCAD /* NSFont+pSize.m in Sources */,
 				C3EDE9E725C5103500FAC920 /* AppDelegate.m in Sources */,
